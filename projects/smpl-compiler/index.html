@@ -113,7 +113,7 @@ CFG.</p>
     width="700"
     height="450"
     >
-  <figcaption>Optimized IR visualization of a program</figcaption>
+  <figcaption>Optimized IR visualization of a program  <i>(Instr for 10 - z is reused)</i></figcaption>
 </figure>
 <h3 id="adding-array-operations">Adding array operations</h3>
 <p>In this step, I extend the compiler to include array operations. These operations also undergo common subexpression
@@ -125,12 +125,12 @@ ensures that the correct value is used every time an array element is accessed.<
     <img 
     src="/images/projects/smpl-compiler/smpl-arr-viz.png"
     alt="IR Visualization of program with arrays"
-    width="700"
-    height="450"
+    width="850"
+    height="525"
     >
   <figcaption>IR Visualization of array operations</figcaption>
 </figure>
-<p><em>Note: the <strong>kill</strong> instructions here are just for debugging purpose</em></p>
+<p><em>Note: the <strong>kill</strong> instructions included here are just for debugging purpose</em></p>
 <h3 id="adding-support-for-user-defined-functions">Adding support for user-defined functions</h3>
 <p>After adding array operations, I added support for user-defined functions.
 <br />
@@ -146,8 +146,8 @@ There are a few assumptions that I make here -</p>
     <img 
     src="/images/projects/smpl-compiler/smpl-func-viz.png"
     alt="IR Visualization of program with UDF"
-    width="800"
-    height="500"
+    width="1000"
+    height="600"
     >
   <figcaption>IR Visualization of a UDF</figcaption>
 </figure>

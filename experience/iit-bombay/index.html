@@ -144,18 +144,15 @@ I used the builder pattern to emit the equivalent Python code. Since the AST sto
 step simply involved walking the AST and string formatting the context to generate the Python code</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AVL</span>(types<span style="color:#f92672">.</span>Lattice):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AvL</span>(types<span style="color:#f92672">.</span>Lattice):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, func: obj<span style="color:#f92672">.</span>Func, val: Optional[set[types<span style="color:#f92672">.</span>Expr]] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>, top: bool <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>, bot: bool <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>):
 </span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(func, val, top, bot)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">meet</span>(self, other):
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> set<span style="color:#f92672">.</span>intersect(self<span style="color:#f92672">.</span>val, other<span style="color:#f92672">.</span>val)
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">po</span>(self, other):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> set<span style="color:#f92672">.</span>issubset(self, other)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __lt__(self, other):
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> set<span style="color:#f92672">.</span>intersect(self<span style="color:#f92672">.</span>val, other<span style="color:#f92672">.</span>val)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> set<span style="color:#f92672">.</span>issubset(self<span style="color:#f92672">.</span>val, other<span style="color:#f92672">.</span>val)
 </span></span><span style="display:flex;"><span>        
 </span></span></code></pre></div><figure>
   <figcaption>Python equivalent of the above specDFA input</figcaption>
