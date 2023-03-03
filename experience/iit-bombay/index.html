@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Himanshu">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/navbar.css">
+    <script src="https://kit.fontawesome.com/204973324d.js" crossorigin="anonymous"></script>
+    <style>
+
+    @import "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap";:root{--cursor-visibility:hidden}html,body{width:100%;height:100%;overflow:auto;font-family:inconsolata,monospace;font-size:4vmin;line-height:4.1vmin;font-weight:400}body{margin:0;display:flex;flex-direction:row;justify-content:center;align-items:center}#content{min-width:82vmin;min-height:82vmin}.cursor,#activity-title:after,#activity-content:after,#cd:after,#whoami:after,#cat:after,#tree:after{visibility:var(--cursor-visibility);content:"|";overflow:hidden;color:#fff;animation:blink 500ms linear infinite alternate}@keyframes blink{0%{opacity:0}100%{opacity:1}}@media only screen and (min-width:768px){body{font-size:2.5vmin;line-height:2.6vmin}#content{min-width:60vmin}}tags-elem{font-family:inconsolata,monospace}pre{border:1px solid #cacaca;line-height:1.2em;padding:10px;overflow:auto;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;background-color:#fafafb;color:#393939;margin:0}:not(pre)>code{font:inherit;color:#000;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #aaa;background-color:#adadad;padding:0 1px;display:inline-block;margin:0}figure{text-align:center}figcaption{font-size:15px}:root{--cursor-visibility:hidden}body{align-items:unset;overflow-y:scroll}#content{max-width:80vmin}pre{overflow-x:scroll;white-space:pre}@keyframes blink{0%{opacity:0}100%{opacity:1}}
+    
+    
+    body{background:#1B1D1E; color: #BBBBBB}body #terminal{color:#BBBBBB}body #user{color:#5FE0B1}body #dir{color:#6DF2FF}body .Typewriter__cursor{color:#BBBBBB}a{color:#BBBBBB}
+
+        
+    .navFull {
+        background-color: #353535;
+        font-family: "Courier New";
+        font-size: 17px;
+        display: inline;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        padding-top: 5px;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+
+    .navCredits {
+        float: right;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+
+    #content::after {
+        content: "\a\a";
+        white-space: pre;
+    }
+        
+        
+</style>
+
+
+
+
+</head>
+<head>
+        <link rel="stylesheet" href="/experience/experience-single.css">
+    </head>
+    <body>
+        <div style="position:relative; width: 100%;">
+            <span style="text-align: center; color: #BBBBBB;">
+                <h1>
+                    IIT Bombay
+                </h1>
+            </span>
+            <div class="exp-tags">
+                
+                <b>tags: </b>
+                
+                        <a href="/tags/compilers"><i class="fa fa-tag indi-tag"> <tags-elem>Compilers</tags-elem></i></a>
+                    
+                        <a href="/tags/data-flow-analysis"><i class="fa fa-tag indi-tag"> <tags-elem>Data Flow Analysis</tags-elem></i></a>
+                    
+                
+            </div>
+            <div class="single-content">
+                <h3>
+                    Position: Research Intern
+                    <br />
+                    <br />
+                    <i class="fa fa-calendar-days exp-duration"> <tags-elem>Oct 2019 - Jun 2020</tags-elem></i>
+                    <br />
+                    <br />
+                    Tech Stack: Java, ANTLR
+                </h3>
+                <p>
+                    <h2 id="about">About</h2>
+<p>As a Research Intern, I was working alongside Anshuman Dhuliya, a PhD student at IIT Bombay, on his project
+<em>Synergistic Program ANalyzer (SPAN)</em>. My role was to contribute to the Front-end of SPAN - to create a source-to-source
+compiler that takes a high-level specification as input and transpiles it into its Python equivalent.</p>
+<h2 id="problem">Problem</h2>
+<p>SPAN required data flow analyses as an input and in Python language to apply those optimizations to an input program.
+There are several ways to specify a data flow analysis but SPAN wanted them to be in a specific format and a way for the
+end users to be able to write them in an intuitive way.</p>
+<h2 id="goal">Goal</h2>
+<p>To create a domain-specific language that would enable users to specify data flow analyses in an intuitive way, and to
+transpile the input to its Python equivalent.</p>
+<h2 id="process">Process</h2>
+<h3 id="devising-the-domain-specific-language---specdfa">Devising the domain specific language - specDFA</h3>
+<ol>
+<li>
+<p>Understanding lexers and parsers
+<br />
+<br />
+To gain a better understanding of lexers and parsers, I familiarized myself with Flex and Bison by creating a JSON
+parser.</p>
+</li>
+<li>
+<p>Understanding data flow analysis
+<br />
+<br />
+This was one of the most important steps as it would determine the syntax of the language to be developed. I researched
+about and understood the different type of analyses such as Available Expression, Constant Propagation, and Live Range
+Analysis</p>
+</li>
+<li>
+<p>Deciding upon the language syntax
+<br />
+<br />
+I acquainted myself with Haskell&rsquo;s syntax to adopt it for specDFA. After several iterations, specDFA&rsquo;s syntax was agreed
+upon.</p>
+</li>
+</ol>
+<figure>
+    <img 
+    src="/images/experience/iit-bombay/iit-b-avl.png"
+    alt="Sample spec for Available Expression analysis"
+    width="550"
+    height="360"
+    >
+  <figcaption>Sample spec for Available Expression analysis</figcaption>
+</figure>
+<h3 id="converting-specdfa-to-python">Converting specDFA to Python</h3>
+<ol>
+<li>
+<p>Building the Abstract Syntax Tree (AST)
+<br />
+<br />
+After exploring a few options, I used ANTLR to build the AST as it provides a convenient way to build and walk the parse
+tree. While walking the parse tree, I store all the required context at every step and build the AST required for the
+code generation step.</p>
+</li>
+<li>
+<p>Walking the AST and emitting Python code
+<br />
+<br />
+I used the builder pattern to emit the equivalent Python code. Since the AST stores all the required information, this
+step simply involved walking the AST and string formatting the context to generate the Python code</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AVL</span>(types<span style="color:#f92672">.</span>Lattice):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, func: obj<span style="color:#f92672">.</span>Func, val: Optional[set[types<span style="color:#f92672">.</span>Expr]] <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>, top: bool <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>, bot: bool <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>):
+</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__(func, val, top, bot)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">meet</span>(self, other):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> set<span style="color:#f92672">.</span>intersect(self<span style="color:#f92672">.</span>val, other<span style="color:#f92672">.</span>val)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">po</span>(self, other):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> set<span style="color:#f92672">.</span>issubset(self, other)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __lt__(self, other):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> set<span style="color:#f92672">.</span>intersect(self<span style="color:#f92672">.</span>val, other<span style="color:#f92672">.</span>val)
+</span></span><span style="display:flex;"><span>        
+</span></span></code></pre></div><figure>
+  <figcaption>Python equivalent of the above specDFA input</figcaption>
+</figure>
+<h1 id="what-i-learned">What I learned</h1>
+<ul>
+<li>I learned how to work on a project where the requirements are vague and changed often</li>
+<li>It helped me improve my research skills - I read multiple research papers and books to learn about data flow analyses
+and static program analyzers</li>
+<li>It introduced me to the back-end of compilers</li>
+<li>I learned about the Builder and Visitor design patterns</li>
+</ul>
+
+                </p>
+            </div><span class="navFull">
+    
+
+
+
+
+    
+    
+
+<span>
+    <a href="/">Home</a>
+    <span>&#8192;|&#8192;</span>
+    <a href="./..">/experience/</a>
+</span>
+
+
+
+    
+
+    <span id="navbar-links">
+        <span class="tooltip"><span class="tooltiptext">Github</span><a href="https://github.com/himanshu808" target="_blank"><i class="fa fa-github navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Linkedin</span><a href="https://www.linkedin.com/in/himanshushah10/" target="_blank"><i class="fa fa-linkedin-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Email</span><a href="mailto:himansss@uci.edu, himanshushah.alt@gmail.com" target="_blank"><i class="fa fa-envelope-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Resume</span><a href="/himanshu_resume.pdf" target="_blank"><i class="fa fa-file navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Website</span><a href="https://himanshu808.github.io/" target="_blank"><i class="fa fa-link navbar-fa"></i></a></span>
+    </span>
+
+    <span class="navCredits">
+        Hugo theme by
+        <a href="https://github.com/Yukuro/hugo-theme-shell" target="_blank" rel="noopener">Yukuro</a>
+    </span>
+</span>
+
+        </div>
+    </body>
+</html>

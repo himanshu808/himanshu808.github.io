@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compilers on Himanshu Shah</title>
+    <link>https://himanshu808.github.io/tags/compilers/</link>
+    <description>Recent content in Compilers on Himanshu Shah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2023 16:58:55 -0800</lastBuildDate><atom:link href="https://himanshu808.github.io/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SMPL Compiler</title>
+      <link>https://himanshu808.github.io/projects/smpl-compiler/</link>
+      <pubDate>Sun, 26 Feb 2023 14:58:29 -0800</pubDate>
+      
+      <guid>https://himanshu808.github.io/projects/smpl-compiler/</guid>
+      <description>An optimizing compiler for SMPL language</description>
+    </item>
+    
+    <item>
+      <title>IIT Bombay</title>
+      <link>https://himanshu808.github.io/experience/iit-bombay/</link>
+      <pubDate>Thu, 02 Mar 2023 16:58:55 -0800</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/iit-bombay/</guid>
+      <description>About As a Research Intern, I was working alongside Anshuman Dhuliya, a PhD student at IIT Bombay, on his project Synergistic Program ANalyzer (SPAN). My role was to contribute to the Front-end of SPAN - to create a source-to-source compiler that takes a high-level specification as input and transpiles it into its Python equivalent.
+Problem SPAN required data flow analyses as an input and in Python language to apply those optimizations to an input program.</description>
+    </item>
+    
+  </channel>
+</rss>

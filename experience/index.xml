@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experience on Himanshu Shah</title>
+    <link>https://himanshu808.github.io/experience/</link>
+    <description>Recent content in Experience on Himanshu Shah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2023 19:38:10 -0800</lastBuildDate><atom:link href="https://himanshu808.github.io/experience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visible Alpha - SE 2</title>
+      <link>https://himanshu808.github.io/experience/va-2/</link>
+      <pubDate>Thu, 02 Mar 2023 19:38:10 -0800</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/va-2/</guid>
+      <description>Responsibilities/Accomplishments After 1.5 years at Visible Alpha, I was promoted to the Software Engineer 2 position. My accomplishments during this time were -
+Architected the framework for adding Snowflake as a delivery channel using the Falcon web framework Achieved a 400% reduction in turnaround time and a 50% reduction in the escalation of support tickets by developing support APIs Documented the projects using the Sphinx documentation generator Revamped the file dispatcher microservice to reduce the number of connections created Performed Snowflake database replication over different regions and clouds Assisted the Infrastructure team with deployment issues I am happy to connect to talk about my work, so reach out to know more!</description>
+    </item>
+    
+    <item>
+      <title>Visible Alpha - SE 1</title>
+      <link>https://himanshu808.github.io/experience/va-1/</link>
+      <pubDate>Thu, 02 Mar 2023 19:07:33 -0800</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/va-1/</guid>
+      <description>Responsibilities/Accomplishments As a Software Engineer in the Data feed and APIs team, I -
+Developed an ETL (Extract, Transform, Load) application using Django to extract, restructure, and deliver financial data that powered real-time applications of over 30 clients Optimized data dispatch performance by 250% by using RabbitMQ and Celery for asynchronous task execution Improved accessibility and consumption of data by adding support for multiple delivery channels such as Amazon S3 buckets, and REST APIs Augmented error logging by leveraging the latest features of Sentry and info logging by implementing a global logger, saving 25% of the team’s time spent on debugging and bug fixes Increased unit test code coverage from 11% to 77% Carried out load and performance testing of the APIs using JMeter Set up a dev environment using Docker and Jenkins for dev testing Wrote backward compatible queries during MySQL version migration Highlights outside the realm of my role Augmented QA team&amp;rsquo;s automation test suite using Cucumber test framework and Behavioral Driven Developement (BDD) Set up weekly meetings with the Product team manager to understand the product better and bridge the gap between the product and the dev team I am happy to connect to talk about my work, so reach out to know more!</description>
+    </item>
+    
+    <item>
+      <title>IIT Bombay</title>
+      <link>https://himanshu808.github.io/experience/iit-bombay/</link>
+      <pubDate>Thu, 02 Mar 2023 16:58:55 -0800</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/iit-bombay/</guid>
+      <description>About As a Research Intern, I was working alongside Anshuman Dhuliya, a PhD student at IIT Bombay, on his project Synergistic Program ANalyzer (SPAN). My role was to contribute to the Front-end of SPAN - to create a source-to-source compiler that takes a high-level specification as input and transpiles it into its Python equivalent.
+Problem SPAN required data flow analyses as an input and in Python language to apply those optimizations to an input program.</description>
+    </item>
+    
+    <item>
+      <title>Mastek</title>
+      <link>https://himanshu808.github.io/experience/mastek/</link>
+      <pubDate>Thu, 02 Mar 2023 03:57:00 -0800</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/mastek/</guid>
+      <description>Problem Mastek was using an internal help-desk application for their employees to log trouble tickets. This help-desk application was Desktop app and was quite cumbersome and difficult to use. Moreover, in certain situations, such as malfunctioning of keyboard or mouse, it became extremely difficult to raise a ticket. Employees had to log in to their PCs every time to view the ticket status.
+Goal To improve the overall user experience of Mastek&amp;rsquo;s internal help-desk application.</description>
+    </item>
+    
+  </channel>
+</rss>

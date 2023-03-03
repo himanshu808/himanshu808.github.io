@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Back-end on Himanshu Shah</title>
+    <link>https://himanshu808.github.io/tags/back-end/</link>
+    <description>Recent content in Back-end on Himanshu Shah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2023 19:07:33 -0800</lastBuildDate><atom:link href="https://himanshu808.github.io/tags/back-end/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visible Alpha - SE 1</title>
+      <link>https://himanshu808.github.io/experience/va-1/</link>
+      <pubDate>Thu, 02 Mar 2023 19:07:33 -0800</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/va-1/</guid>
+      <description>Responsibilities/Accomplishments As a Software Engineer in the Data feed and APIs team, I -
+Developed an ETL (Extract, Transform, Load) application using Django to extract, restructure, and deliver financial data that powered real-time applications of over 30 clients Optimized data dispatch performance by 250% by using RabbitMQ and Celery for asynchronous task execution Improved accessibility and consumption of data by adding support for multiple delivery channels such as Amazon S3 buckets, and REST APIs Augmented error logging by leveraging the latest features of Sentry and info logging by implementing a global logger, saving 25% of the team’s time spent on debugging and bug fixes Increased unit test code coverage from 11% to 77% Carried out load and performance testing of the APIs using JMeter Set up a dev environment using Docker and Jenkins for dev testing Wrote backward compatible queries during MySQL version migration Highlights outside the realm of my role Augmented QA team&amp;rsquo;s automation test suite using Cucumber test framework and Behavioral Driven Developement (BDD) Set up weekly meetings with the Product team manager to understand the product better and bridge the gap between the product and the dev team I am happy to connect to talk about my work, so reach out to know more!</description>
+    </item>
+    
+  </channel>
+</rss>

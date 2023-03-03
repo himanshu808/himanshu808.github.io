@@ -1,0 +1,13 @@
+.single-content {
+    color: #BBBBBB;
+    position: absolute;
+    text-align: left;
+    top: 15%;
+    left: 30%;
+    width: 50%;
+    font-size: larger;
+}
+
+li {
+    margin-bottom: 15px;  
+}

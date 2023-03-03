@@ -1,0 +1,110 @@
+body {
+  background: #1B1D1E;
+  white-space: inherit;
+}
+
+#myimage {
+  width: 38%;
+  padding-top: 15px;
+}
+
+a{
+  font: inherit;
+}
+
+/* mouse over link */
+a:hover {
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* selected link */
+a:active {
+  font-weight: 600;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,15);
+  transition: 0.3s;
+  width: 18%;
+  text-align: center;
+}
+
+#profile-card {
+  left: 5%;
+  height: 50%;
+  position: absolute;
+}
+
+#summary-card {
+  right: 5%;
+  height: 50%;
+  position: absolute;
+}
+
+#update-card {
+  right: 5%;
+  height: 25%;
+  position: absolute;
+}
+
+#implinks-card {
+  left: 5%;
+  height: 25%;
+  position: absolute;
+}
+
+#update-text {
+  font-size: 16px;
+  text-align: left;
+}
+
+#imp-text {
+  font-size: 18px;
+  text-align: left;
+  padding-left: 40px;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,10);
+}
+
+.container {
+  padding: 2px 8px;
+  left: 20%;
+}
+
+#links {
+  padding-top: 25px;
+}
+
+.custom-fa {
+  padding: 10px;
+}
+  
+.tooltip {
+  /* position: relative; */
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 20px;
+  padding-bottom: 15px;
+  /* background-color: black; */
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+  /* padding: 5px 0; */
+  /* border-radius: 6px;  */
+  position: absolute;
+  z-index: 1;
+  bottom: 7%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

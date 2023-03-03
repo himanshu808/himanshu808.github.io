@@ -1,0 +1,17 @@
+.single-content {
+    color: #BBBBBB;
+    /*position: relative;*/
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 10%;
+    padding-bottom: 100px;
+    width: 80%;
+}
+
+.indi-tag {
+    padding-left: 3px;
+}
+
+.exp-tags {
+    text-align: center;
+}

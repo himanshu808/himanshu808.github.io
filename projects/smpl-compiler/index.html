@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Himanshu">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/navbar.css">
+    <script src="https://kit.fontawesome.com/204973324d.js" crossorigin="anonymous"></script>
+    <style>
+
+    @import "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap";:root{--cursor-visibility:hidden}html,body{width:100%;height:100%;overflow:auto;font-family:inconsolata,monospace;font-size:4vmin;line-height:4.1vmin;font-weight:400}body{margin:0;display:flex;flex-direction:row;justify-content:center;align-items:center}#content{min-width:82vmin;min-height:82vmin}.cursor,#activity-title:after,#activity-content:after,#cd:after,#whoami:after,#cat:after,#tree:after{visibility:var(--cursor-visibility);content:"|";overflow:hidden;color:#fff;animation:blink 500ms linear infinite alternate}@keyframes blink{0%{opacity:0}100%{opacity:1}}@media only screen and (min-width:768px){body{font-size:2.5vmin;line-height:2.6vmin}#content{min-width:60vmin}}tags-elem{font-family:inconsolata,monospace}pre{border:1px solid #cacaca;line-height:1.2em;padding:10px;overflow:auto;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;background-color:#fafafb;color:#393939;margin:0}:not(pre)>code{font:inherit;color:#000;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #aaa;background-color:#adadad;padding:0 1px;display:inline-block;margin:0}figure{text-align:center}figcaption{font-size:15px}:root{--cursor-visibility:hidden}body{align-items:unset;overflow-y:scroll}#content{max-width:80vmin}pre{overflow-x:scroll;white-space:pre}@keyframes blink{0%{opacity:0}100%{opacity:1}}
+    
+    
+    body{background:#1B1D1E; color: #BBBBBB}body #terminal{color:#BBBBBB}body #user{color:#5FE0B1}body #dir{color:#6DF2FF}body .Typewriter__cursor{color:#BBBBBB}a{color:#BBBBBB}
+
+        
+    .navFull {
+        background-color: #353535;
+        font-family: "Courier New";
+        font-size: 17px;
+        display: inline;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        padding-top: 5px;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+
+    .navCredits {
+        float: right;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+
+    #content::after {
+        content: "\a\a";
+        white-space: pre;
+    }
+        
+        
+</style>
+
+
+
+
+</head>
+<head>
+        <link rel="stylesheet" href="/projects/project-single.css">
+    </head>
+    <body>
+        <div style="position:relative; width: 100%;">
+            <span style="text-align: center; color: #BBBBBB;">
+                <h1>
+                    SMPL Compiler
+                    <a href="https://github.com/himanshu808/smpl-compiler" target="_blank"><i class="fa fa-link" style="font-size: 20px;"></i></a>
+                </h1>
+            </span>
+
+            <div class="single-content">
+                <p>
+                    <h2 id="about">About</h2>
+<p>SMPL is a small programming language used in academia and can be parsed using an LL(1) parser. It consists of integers,
+arrays (single and multidimensional) and functions (user- and pre-defined).</p>
+<h2 id="aim">Aim</h2>
+<p>The aim of this project is to implement an optimizing compiler of SMPL language. The entire project is built from
+scratch, including the lexer and the parser.
+<br />
+The compiler should generate an SSA-based IR, and it should perform optimizations such as copy propagation,
+common subexpression elimination, and dead code elimination.
+<br />
+<br />
+<em>Note: this project is a WIP</em></p>
+<h2 id="implementation-process">Implementation Process</h2>
+<h3 id="generating-ssa-based-ir">Generating SSA-based IR</h3>
+<p>This step involved generating SSA-based IR of the given input program while leaving out arrays and functions.
+Optimizations such as copy propagation and common subexpression elimination are performed on the fly while generating
+the IR.</p>
+<ol>
+<li>
+<p>Building a recursive-descent parser
+<br />
+<br />
+Based on the given grammar, I first built a simple recursive-descent parser for a subset of the language.</p>
+</li>
+<li>
+<p>Performing optimizations
+<br />
+<br />
+While parsing, the copy propagation and common subexpression elimination optimizations are applied on the fly.
+To achieve this, I build the dominator tree as I parse the input and before converting any statement into its equivalent
+instruction, I first check if either of the optimizations can be applied.
+<br />
+<br />
+The output of this step is best visualized once the IR Visualization tool is built.</p>
+</li>
+</ol>
+<h3 id="building-an-ir-visualization-tool">Building an IR visualization tool</h3>
+<p>The in-memory data structure of the previous step stores all the information required to build a visualization of the
+control flow graph (CFG) of the program.
+<br />
+<br />
+In this step, I simply walk the IR generated and transpile it into DOT language and use <code>graphviz</code> to visualize the
+CFG.</p>
+<figure>
+    <img 
+    src="/images/projects/smpl-compiler/smpl-ir-viz.png"
+    alt="IR Visualization of a sample program"
+    width="700"
+    height="450"
+    >
+  <figcaption>Optimized IR visualization of a program</figcaption>
+</figure>
+<h3 id="adding-array-operations">Adding array operations</h3>
+<p>In this step, I extend the compiler to include array operations. These operations also undergo common subexpression
+elimination to eliminate any redundant loads.
+<br />
+One important point here is to include <em>kill</em> instructions every time a store is performed. This is important as it
+ensures that the correct value is used every time an array element is accessed.</p>
+<figure>
+    <img 
+    src="/images/projects/smpl-compiler/smpl-arr-viz.png"
+    alt="IR Visualization of program with arrays"
+    width="700"
+    height="450"
+    >
+  <figcaption>IR Visualization of array operations</figcaption>
+</figure>
+<p><em>Note: the <strong>kill</strong> instructions here are just for debugging purpose</em></p>
+<h3 id="adding-support-for-user-defined-functions">Adding support for user-defined functions</h3>
+<p>After adding array operations, I added support for user-defined functions.
+<br />
+<br />
+There are a few assumptions that I make here -</p>
+<ul>
+<li>Arrays cannot be passed to the functions</li>
+<li>Functions can only return a scalar</li>
+<li>Global variables are not accessible from within the functions</li>
+<li>Variable names are unique, i.e. there are no conflicting names between global and local variables</li>
+</ul>
+<figure>
+    <img 
+    src="/images/projects/smpl-compiler/smpl-func-viz.png"
+    alt="IR Visualization of program with UDF"
+    width="800"
+    height="500"
+    >
+  <figcaption>IR Visualization of a UDF</figcaption>
+</figure>
+<h1 id="what-i-learned">What I learned</h1>
+<p>Despite facing several challenges, building a compiler from scratch was a lot of fun!
+Since this project mainly dealt with the middle- and the back-end of a compiler, everything I learned was new to me.
+<br />
+<br />
+The two main takeaways from this project for me are -</p>
+<ol>
+<li>
+<p>The importance of using the right data structures
+<br />
+<br />
+As I performed a lot of operations on the fly, I had to store a lot of information using many data structures. Choosing
+the right data structure here was crucial, as the number of data structures being used and the amount of duplicate info
+being stored could otherwise easily blow up.</p>
+</li>
+<li>
+<p>The importance of OOP and architecting the project well
+<br />
+<br />
+I realized the importance of planning of the overall project design when I was dealing with user-defined functions.
+Since I had already created a separate class for a CFG keeping the overall program structure in mind, I was able to
+leverage this design advantage, making my work of dealing with user-defined functions as simple as creating another
+object of the CFG class.</p>
+</li>
+</ol>
+
+                </p>
+            </div><span class="navFull">
+    
+
+
+
+
+    
+    
+
+<span>
+    <a href="/">Home</a>
+    <span>&#8192;|&#8192;</span>
+    <a href="./..">/projects/</a>
+</span>
+
+
+
+    
+
+    <span id="navbar-links">
+        <span class="tooltip"><span class="tooltiptext">Github</span><a href="https://github.com/himanshu808" target="_blank"><i class="fa fa-github navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Linkedin</span><a href="https://www.linkedin.com/in/himanshushah10/" target="_blank"><i class="fa fa-linkedin-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Email</span><a href="mailto:himansss@uci.edu, himanshushah.alt@gmail.com" target="_blank"><i class="fa fa-envelope-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Resume</span><a href="/himanshu_resume.pdf" target="_blank"><i class="fa fa-file navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Website</span><a href="https://himanshu808.github.io/" target="_blank"><i class="fa fa-link navbar-fa"></i></a></span>
+    </span>
+
+    <span class="navCredits">
+        Hugo theme by
+        <a href="https://github.com/Yukuro/hugo-theme-shell" target="_blank" rel="noopener">Yukuro</a>
+    </span>
+</span>
+
+        </div>
+    </body>
+</html>

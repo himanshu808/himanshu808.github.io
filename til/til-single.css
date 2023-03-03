@@ -1,0 +1,21 @@
+.single-content {
+    color: #BBBBBB;
+    position: relative;
+    text-align: left;
+    top: 15%;
+    width: 80%;
+}
+
+.til-meta {
+    text-align: center; 
+    color: #BBBBBB; 
+    position: absolute;
+}
+
+#card-tag {
+    padding-left: 3px;
+}
+
+.time {
+    padding-left: 15px;
+}

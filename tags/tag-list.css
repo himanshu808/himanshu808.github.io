@@ -1,0 +1,11 @@
+.all-tags {
+    position: absolute;
+    top: 15%;
+    width: 30%;
+    font-size: x-large;
+    padding-bottom: 100px;
+}
+
+li { 
+    margin-bottom: 15px;  
+ }
