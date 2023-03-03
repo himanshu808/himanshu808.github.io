@@ -41,7 +41,7 @@
       
       <guid>https://himanshu808.github.io/experience/va-2/</guid>
       <description>Responsibilities/Accomplishments After 1.5 years at Visible Alpha, I was promoted to the Software Engineer 2 position. My accomplishments during this time were -
-Architected the framework for adding Snowflake as a delivery channel using the Falcon web framework Achieved a 400% reduction in turnaround time and a 50% reduction in the escalation of support tickets by developing support APIs Documented the projects using the Sphinx documentation generator Revamped the file dispatcher microservice to reduce the number of connections created Performed Snowflake database replication over different regions and clouds Assisted the Infrastructure team with deployment issues I am happy to connect to talk about my work, so reach out to know more!</description>
+Architected the framework for adding Snowflake as a delivery channel using the Falcon web framework Achieved a 400% reduction in turnaround time and a 50% reduction in the escalation of support tickets by developing support APIs Documented the projects using the Sphinx documentation generator Revamped the file dispatcher microservice to reduce the number of connections created Developed a monitoring dashboard to report daily file generation and dispatch metrics Performed Snowflake database replication over different regions and clouds Assisted the Infrastructure team with deployment issues I am happy to connect to talk about my work, so reach out to know more!</description>
     </item>
     
     <item>
