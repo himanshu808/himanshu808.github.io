@@ -96,12 +96,12 @@ that the node was never created or was deleted before that version.</p>
 </figure>
 <br />
 <br />
-In the above image, the BST is printed level-wise and *None* represents a NULL node.
+<p>In the above image, the BST is printed level-wise and <em>None</em> represents a NULL node.
 <br />
 Initially, there were 3 nodes in the BST with 5 as the root.
 Once 5 was deleted, 6 became the new root and parent of 4 was updated to 6.
 When I access a previous version (version 3 here), I can read what was the state in that previous version. Here, 5 was
-the root in version 3 of the tree and hence the BST before deleting node 5 is printed again.
+the root in version 3 of the tree and hence the BST before deleting node 5 is printed again.</p>
 <h1 id="what-i-learned">What I learned</h1>
 <p>I learned about the different types of persistence in data structures - partial, full and confluent. I also learned
 about the different methods to implement persistence in data structures.</p>
