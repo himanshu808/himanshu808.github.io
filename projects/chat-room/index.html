@@ -50,70 +50,104 @@
 
 </head>
 <head>
-        <link rel="stylesheet" href="/tags/tag-single.css">
+        <link rel="stylesheet" href="/projects/project-single.css">
     </head>
     <body>
-        <span style="text-align: center; color: #BBBBBB; position: absolute;"><h1>Python</h1></span>
+        <div style="position:relative; width: 100%;">
+            <span style="text-align: center; color: #BBBBBB;">
+                <h1>
+                    Chat Room
+                    <a href="https://github.com/himanshu808/chat-room" target="_blank"><i class="fa fa-link" style="font-size: 20px;"></i></a>
+                </h1>
+            </span>
 
-        <div class="single-content">
-            
-            <ul></ul>
-            
+            <span style="text-align: center; color: #BBBBBB;">
+                
+                <h4>Last modified: 03-08-2023</h4>
+            </span>
+            <div class="single-content">
+                <p>
+                    <h2 id="about">About</h2>
+<p>In my sophomore year, I wanted to explore GUI programming in Python and as a result I built this project where I also
+worked with sockets for the first time.</p>
+<h2 id="aim">Aim</h2>
+<p>The objective of this project was to build a broadcast chat room with GUI that allowed communicating over LAN.</p>
+<h2 id="features">Features</h2>
+<h3 id="server">Server</h3>
+<ul>
+<li>Monitors connection statuses of all clients</li>
+<li>Broadcasts messages to all clients in the room</li>
+<li>Notifies all clients whenever a client joins/exits the room</li>
+</ul>
+<h3 id="client">Client</h3>
+<ul>
+<li>Can have multiple clients in the chat room</li>
+<li>Can connect/disconnect at any time</li>
+</ul>
+<figure>
+    <img 
+    src="/images/projects/chat-room/client-1.png"
+    alt="Client and server"
+    width="1200"
+    height="450"
+    >
+  <figcaption>First client connected to the server</figcaption>
+</figure>
+<br />
+<br />
+<figure>
+    <img 
+    src="/images/projects/chat-room/client-2.png"
+    alt="Second client enters"
+    width="1200"
+    height="600"
+    >
+  <figcaption>Second client joins in (Client 1 is notified of client 2)</figcaption>
+</figure>
+<br />
+<br />
+<figure>
+    <img 
+    src="/images/projects/chat-room/broadcast-msg.png"
+    alt="Message from client 1 is broadcasted"
+    width="1200"
+    height="600"
+    >
+  <figcaption>Message from Client 1 is broadcasted to all other clients</figcaption>
+</figure>
+<br />
+<br />
+<figure>
+    <img 
+    src="/images/projects/chat-room/client-exited.png"
+    alt="Client 3 exits"
+    width="1200"
+    height="600"
+    >
+  <figcaption>Client 3 exits and all other clients are notified</figcaption>
+</figure>
+<h1 id="what-i-learned">What I learned</h1>
+<p>This was my first (<em>and the only time, so far</em>) where I worked with GUI in Python.
+It was also the first time when I learned to connect to a database using Python
+(<em>the username and passwords you see in the images were actually being stored in a database</em>).
+<br />
+<br />
+All in all, it was really fun!</p>
 
-            
-            <ul>
-                        
-                            <h3>Projects</h3>
-                            
-                        
-                        <li>
-                            <a href="/projects/smpl-compiler/">SMPL Compiler</a>
-                        </li>
-                    
-                        
-                        <li>
-                            <a href="/projects/partially-persistent-bst/">Partially Persistent BST</a>
-                        </li>
-                    
-                        
-                        <li>
-                            <a href="/projects/chat-room/">Chat Room</a>
-                        </li>
-                    </ul>
-            
-                <br>
-            
-
-            
-            <ul>
-                        
-                            <h3>Experiences</h3>
-                            
-                        
-                        <li>
-                            <a href="/experience/va-2/">Visible Alpha - SE 2</a>
-                        </li>
-                    
-                        
-                        <li>
-                            <a href="/experience/va-1/">Visible Alpha - SE 1</a>
-                        </li>
-                    </ul>
-        </div><span class="navFull">
+                </p>
+            </div><span class="navFull">
     
 
 
 
 
-    
-    
     
     
 
 <span>
     <a href="/">Home</a>
     <span>&#8192;|&#8192;</span>
-    <a href="./..">/tags/</a>
+    <a href="./..">/projects/</a>
 </span>
 
 
@@ -133,6 +167,7 @@
         <a href="https://github.com/Yukuro/hugo-theme-shell" target="_blank" rel="noopener">Yukuro</a>
     </span>
 </span>
-        
+
+        </div>
     </body>
 </html>
