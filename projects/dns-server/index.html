@@ -64,7 +64,7 @@
 
             <span style="text-align: center; color: #BBBBBB;">
                 
-                <h4>Last modified: 03-09-2023</h4>
+                <h4>Last modified: 03-22-2023</h4>
             </span>
             <div class="single-content">
                 <p>
@@ -79,7 +79,6 @@ reasons that we have been able to scale the Internet to as we know it today!</p>
 hands dirty and implementing my own DNS server!</p>
 <p>This project is a basic implementation of a DNS server with the goal of understanding <em>how DNS works</em>,
 <em>what do the DNS question and response packets look like</em>, and playing around with the <em>dig</em> and <em>nc</em> commands.</p>
-<p><em>Note: this project is a WIP</em></p>
 <h2 id="implementation-process">Implementation Process</h2>
 <h3 id="understanding-the-dns-protocol">Understanding the DNS protocol</h3>
 <ol>
@@ -206,6 +205,95 @@ to the client.</p>
   <figcaption>DNS client receives response from Proxy server</figcaption>
 </figure>
 <p>With this, my DNS proxy server is up and running and can respond to queries with different record types! 🥳 🎉</p>
+<h3 id="implementing-the-dns-recursive-resolver">Implementing the DNS recursive resolver</h3>
+<p>This is the final step of this project where I go about implementing a recursive resolver. So far my server was simply
+a proxy server, dependent on another server to actually perform the lookup. In this step, I recursively resolve a domain
+starting right from the root servers, resolving the top-level domains first, i.e. when resolving <code>www.google.com</code>, the
+root servers give me the information about <code>com</code> and tell me where to look next. I perform this lookup recursively till
+I end up with the entire domain name that the query was searching for.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send a lookup query to the DNS Server listening on port 3053</span>
+</span></span><span style="display:flex;"><span>dig +noedns +norecurse @127.0.0.1 -p <span style="color:#ae81ff">3053</span> www.google.com  <span style="color:#75715e"># lookup www.google.com&#39;s IP</span>
+</span></span></code></pre></div><figure>
+    <img 
+    src="/images/projects/dns-server/dns-query.png"
+    alt="DNS Query"
+    width="650"
+    height="450"
+    >
+  <figcaption>Query for <i>www.google.com</i> received from the client</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-lookup-1.png"
+    alt="DNS Lookup 1"
+    width="700"
+    height="450"
+    >
+  <figcaption>Performing the first lookup</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-resp-1.png"
+    alt="DNS Response 1"
+    width="700"
+    height="550"
+    >
+  <figcaption>Response received from the NS: 198.41.0.4</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-resp-2.png"
+    alt="DNS Response 2"
+    width="700"
+    height="550"
+    >
+  <figcaption>A random IP of an <i>A type</i> record is selected to perform the next lookup</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-lookup-2.png"
+    alt="DNS Lookup 2"
+    width="700"
+    height="450"
+    >
+  <figcaption>Performing the second lookup</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-resp-3.png"
+    alt="DNS Response 3"
+    width="700"
+    height="550"
+    >
+  <figcaption>Response of the second lookup</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-lookup-3.png"
+    alt="DNS Lookup 3"
+    width="700"
+    height="450"
+    >
+  <figcaption>Performing the final lookup</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-resp-4.png"
+    alt="DNS Response 4"
+    width="700"
+    height="650"
+    >
+  <figcaption>IP of <i>www.google.com</i> found and returned to the client!</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/dns-server/dns-dig-resp.png"
+    alt="DNS Client Resp"
+    width="800"
+    height="450"
+    >
+  <figcaption>Client receives the response of the final lookup</figcaption>
+</figure>
 <h1 id="what-i-learned">What I learned</h1>
 <p>I gained a lot of knowledge w.r.t. Computer Networks and DNS while working on this project;
 parsing the DNS packets helped me refresh my bit manipulation skills and I worked with sockets once again while
