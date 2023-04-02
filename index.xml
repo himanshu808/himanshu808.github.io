@@ -6,7 +6,16 @@
     <description>Recent content on Himanshu Shah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Mar 2023 14:29:41 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 22:35:50 -0400</lastBuildDate><atom:link href="https://himanshu808.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tweet Sentiment Analysis</title>
+      <link>https://himanshu808.github.io/projects/tweet-sentiment-analysis/</link>
+      <pubDate>Sat, 01 Apr 2023 22:35:50 -0400</pubDate>
+      
+      <guid>https://himanshu808.github.io/projects/tweet-sentiment-analysis/</guid>
+      <description>Categorizing tweets as positive or negative</description>
+    </item>
+    
     <item>
       <title>Cron UI</title>
       <link>https://himanshu808.github.io/projects/cron-ui/</link>
@@ -93,7 +102,7 @@ Goal To improve the overall user experience of Mastek&amp;rsquo;s internal help-
     </item>
     
     <item>
-      <title></title>
+      <title>About me</title>
       <link>https://himanshu808.github.io/whoami/</link>
       <pubDate>Thu, 23 Feb 2023 20:07:38 -0800</pubDate>
       

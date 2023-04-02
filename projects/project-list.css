@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    width: 100vw;
+    /*grid-auto-rows: minmax(100px, auto);*/
+    /*width: 100vw;*/
 }
 
 .pg-title {
@@ -19,7 +19,7 @@
     white-space: inherit;
     margin-top: 18%;
     margin-left: 18%;
-    height: 55%;
+    height: 45%;
     /*contain: size;*/
     /*max-height: 70%;*/
     width: 70%;
@@ -30,8 +30,8 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,15);
     transition: 0.3s;
     white-space: inherit;
-    height: 20%;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .card-projects {
