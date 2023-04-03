@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Tweet Sentiment Analysis</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5R07KJL4R"></script>
+    <script>
+        const host = window.location.hostname;
+        if(host !== "localhost")
+        {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+gtag('config', 'G-W5R07KJL4R');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Himanshu">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="icon" type="image/x-icon" href="/images/myicon.png">
+    <script src="https://kit.fontawesome.com/204973324d.js" crossorigin="anonymous"></script>
+    <style>
+
+    @import "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap";:root{--cursor-visibility:hidden}html,body{width:100%;height:100%;overflow:auto;font-family:inconsolata,monospace;font-size:4vmin;line-height:4.1vmin;font-weight:400}body{margin:0;display:flex;flex-direction:row;justify-content:center;align-items:center}#content{min-width:82vmin;min-height:82vmin}.cursor,#activity-title:after,#activity-content:after,#cd:after,#whoami:after,#cat:after,#tree:after{visibility:var(--cursor-visibility);content:"|";overflow:hidden;color:#fff;animation:blink 500ms linear infinite alternate}@keyframes blink{0%{opacity:0}100%{opacity:1}}@media only screen and (min-width:768px){body{font-size:2.5vmin;line-height:2.6vmin}#content{min-width:60vmin}}tags-elem{font-family:inconsolata,monospace}pre{border:1px solid #cacaca;line-height:1.2em;padding:10px;overflow:auto;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;background-color:#fafafb;color:#393939;margin:0}:not(pre)>code{font:inherit;color:#000;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #aaa;background-color:#adadad;padding:0 1px;display:inline-block;margin:0}figure{text-align:center}figcaption{font-size:15px}table,th,td{border:1px groove #fff;border-collapse:collapse}th,td{text-align:center;padding:1px}table{table-layout:fixed;width:100%}:root{--cursor-visibility:hidden}body{align-items:unset;overflow-y:scroll}#content{max-width:80vmin}pre{overflow-x:scroll;white-space:pre}@keyframes blink{0%{opacity:0}100%{opacity:1}}
+    
+    
+    body{background:#1B1D1E; color: #BBBBBB}body #terminal{color:#BBBBBB}body #user{color:#5FE0B1}body #dir{color:#6DF2FF}body .Typewriter__cursor{color:#BBBBBB}a{color:#BBBBBB}
+
+        
+    .navFull {
+        background-color: #353535;
+        font-family: "Courier New";
+        font-size: 17px;
+        display: inline;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        padding-top: 5px;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+
+    .navCredits {
+        float: right;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+
+    #content::after {
+        content: "\a\a";
+        white-space: pre;
+    }
+        
+        
+</style>
+
+
+
+
+</head>
+<head>
+        <link rel="stylesheet" href="/projects/project-single.css">
+    </head>
+    <body>
+        <div style="position:relative; width: 100%;">
+            <span style="text-align: center; color: #BBBBBB;">
+                <h1>
+                    Tweet Sentiment Analysis
+                    
+                        <a href="https://github.com/himanshu808/tweet-sentiment-analysis" target="_blank"><i class="fa fa-link" style="font-size: 20px;"></i></a>
+                    
+                </h1>
+            </span>
+
+            <div class="pro-tags">
+                
+                <b>tags: </b>
+                
+                        <a href="/tags/python"><i class="fa fa-tag indi-tag"> <tags-elem>Python</tags-elem></i></a>
+                    
+                        <a href="/tags/machine-learning"><i class="fa fa-tag indi-tag"> <tags-elem>Machine Learning</tags-elem></i></a>
+                    
+                        <a href="/tags/deep-learning"><i class="fa fa-tag indi-tag"> <tags-elem>Deep Learning</tags-elem></i></a>
+                    
+                        <a href="/tags/nlp"><i class="fa fa-tag indi-tag"> <tags-elem>NLP</tags-elem></i></a>
+                    
+                        <a href="/tags/cnn"><i class="fa fa-tag indi-tag"> <tags-elem>CNN</tags-elem></i></a>
+                    
+                        <a href="/tags/rnn"><i class="fa fa-tag indi-tag"> <tags-elem>RNN</tags-elem></i></a>
+                    
+                        <a href="/tags/pytorch"><i class="fa fa-tag indi-tag"> <tags-elem>PyTorch</tags-elem></i></a>
+                    
+                
+            </div>
+
+            <div class="single-content">
+                <p>
+                    <h2 id="aim">Aim</h2>
+<p>The aim of this project is to develop a sentiment analysis model that classifies a tweet as having a positive or a
+negative sentiment. While implementing this sentiment analysis model, I explore different <code>Deep Learning</code> models such as
+1-D Convolutional Neural Networks (<code>CNN</code>) and Recurrent Neural Networks (<code>RNN</code>). In this project, I compare the performance
+of the Deep Learning models with <code>Machine Learning</code> techniques such as <code>Logistic Regression</code> and <code>Random Forest Classifier</code>.</p>
+<h2 id="implementation-process">Implementation Process</h2>
+<h3 id="data-exploration">Data Exploration</h3>
+<ol>
+<li>
+<p>Twitter Sentiment Extraction
+<br />
+<br />
+This is an open dataset provided for the Twitter Sentiment Extraction competition on Kaggle. The dataset contains around
+30000 text-to-sentiment mappings. Running various models on the dataset yielded a maximum accuracy of around 68%.
+Upon analysis, under-fitting of data was observed due to insufficient data points.</p>
+</li>
+<li>
+<p>Sentiment140 dataset
+<br />
+<br />
+This dataset is an extended version of the previous Twitter dataset, containing 1.6 million tweets using the Twitter API.
+The tweet texts are classified using positive and negative labels along with other tweet-specific fields.</p>
+</li>
+<li>
+<p>Twitter Sentiment Analysis dataset
+<br />
+<br />
+This is an entity-level sentiment analysis dataset of Twitter. The dataset contains around 75000 text-to-sentiment.
+This dataset also encountered similar issues as the first dataset i.e. under-fitting due to the small dataset size.</p>
+</li>
+</ol>
+<p>To get a more generalized and sufficiently large dataset, all the above three datasets were combined with each
+datapoint/tweet having either a positive or negative label.</p>
+<h3 id="data-preprocessing">Data Preprocessing</h3>
+<ol>
+<li>
+<p>Data cleaning
+<br />
+<br />
+First, I processed the data to remove non-contributing data/words such as stop words, URLs, emojis, and punctuation.
+To ignore the usernames mentioned in the tweet, I converted any text preceded by a <em>@</em> to <em>@user</em>. Finally, I ensured
+all the text was also converted to a lowercase to make the data more uniform.</p>
+</li>
+<li>
+<p>Continuous letters
+<br />
+<br />
+Many tweets consisted of text containing characters repeating more than 2 times. <em>(e.g. goooooood)</em>. This was causing
+the model to treat <em>goooooood</em> and <em>good</em> as two different words despite meaning the same thing. To avoid such cases,
+I modified the data to only include at most 2 continuous letters i.e. <em>goooooood</em> was now treated as <em>good</em>. This reduced
+the overall number of distinct words in the vocabulary.</p>
+</li>
+<li>
+<p>Standardizing tweet length
+<br />
+<br />
+To standardize the input, I padded all the tweets to have the same length before converting the tweets into embeddings.
+The tweets were padded equally on both sides with 0s to have a uniform length of 64 words. Any tweets of initial length
+less than 3 were discarded.</p>
+</li>
+</ol>
+<h3 id="model-exploration">Model Exploration</h3>
+<p>In this step, I compare the performance of various Deep Learning and Machine Learning models for tweet sentiment
+analysis. I experimented with different values for hyperparameters such as learning rate, number of epochs, kernel size,
+etc. in the model exploration step.</p>
+<ol>
+<li>1-D CNN</li>
+</ol>
+<ul>
+<li>First, I applied an embedding layer here the data is embedded to a length of 128.</li>
+<li>The data is then passed through three 1-D CNN layers with kernel sizes 3, 4, and 7 respectively. The stride used was
+1 with 100 in/out channels. For this, I used <code>PyTorch</code>&rsquo;s <em>Conv1d</em> layer.</li>
+<li>The output of the CNN layer is then passed through a ReLU activation function and maxpool-ed to reduce the complexity
+of the model.</li>
+<li>Finally, the data is flattened and passed through a fully connected layer to reduce the output size to 2 (denoting the
+positive and negative labels).</li>
+<li>The model was trained for 100 epochs with a learning rate of 0.0005.</li>
+</ul>
+<figure>
+    <img 
+    src="/images/projects/tweet-sentiment-analysis/cnn-model.png"
+    alt="CNN Model Layers"
+    width="500"
+    height="450"
+    >
+  <figcaption>CNN Model Summary</figcaption>
+</figure>
+<ol start="2">
+<li>RNN</li>
+</ol>
+<ul>
+<li>Similar to the previous model, an embedding layer is applied where the data is embedded to a length of 128.</li>
+<li>The embeddings are passed through three RNN layers with input and hidden size of 64, and ReLU activation. For this, I
+used PyTorch&rsquo;s <em>RNN</em> layer.</li>
+<li>The output of the RNN layer is then maxpool-ed to reduce the complexity of the model.</li>
+<li>Finally, the data is flattened and passed through a fully connected layer to reduce the output size to 2 (denoting the
+positive and negative labels).</li>
+<li>The model was trained for 50 epochs with a learning rate of 0.0005.</li>
+</ul>
+<figure>
+    <img 
+    src="/images/projects/tweet-sentiment-analysis/rnn-model.png"
+    alt="RNN Model Layers"
+    width="550"
+    height="450"
+    >
+  <figcaption>RNN Model Summary</figcaption>
+</figure>
+<ol start="3">
+<li>Logistic regression</li>
+</ol>
+<ul>
+<li>For this Machine Learning technique, I used the <code>sklearn</code> library&rsquo;s <em>LogisticRegression</em> class.</li>
+<li>First, I used the <em>CountVectorizer</em> class to extract the features from the text data.
+All words that were present in less than 5 different tweets were discarded by setting the <em>min_df</em> option to 5.</li>
+<li>Training and testing data sets were then transformed using this <em>CountVectorizer</em> and passed to the model.</li>
+<li>I set the maximum number of iterations to 10000 while training the model.</li>
+</ul>
+<ol start="4">
+<li>Random Forest Classifier</li>
+</ol>
+<ul>
+<li>I used <code>sklearn</code> library&rsquo;s <em>RandomForestClassifier</em> class to train the model.</li>
+<li>I used the same preprocessed training and testing from the previous step.</li>
+<li>100 estimators with a maximum depth of 5 and 5 minimum lead nodes were used,</li>
+<li>The parameters were determined by testing various scenarios of under- and over-fitting.</li>
+</ul>
+<h3 id="performance-validation">Performance Validation</h3>
+<p>To compare the performance of all the models, I used an 80-20 train-test split of the dataset.
+<br />
+For CNN and RNN, an L2 regularization was used to prevent over-fitting and increase validation accuracy.</p>
+<figure>
+    <img 
+    src="/images/projects/tweet-sentiment-analysis/cnn-perf.png"
+    alt="CNN - Loss vs # of Epochs"
+    width="700"
+    height="450"
+    >
+  <figcaption>CNN - Loss vs # of Epochs</figcaption>
+</figure>
+<figure>
+    <img 
+    src="/images/projects/tweet-sentiment-analysis/rnn-perf.png"
+    alt="RNN - Loss vs # of Epochs"
+    width="700"
+    height="450"
+    >
+  <figcaption>RNN - Loss vs # of Epochs</figcaption>
+</figure>
+<br />
+<table>
+  <tr>
+    <th>Model</th>
+    <td>1-D CNN</td>
+    <td>RNN</td>
+    <td>Logistic Regression</td>
+    <td>Random Forest Classifier</td>
+  </tr>
+  <tr>
+    <th>Accuracy</th>
+    <td>82.24%</td>
+    <td>79.85%</td>
+    <td>79.73%</td>
+    <td>77.64%</td>
+  </tr>
+</table>
+<figcaption style="text-align: center; margin-top: 5px">Performance comparison of all the models</figcaption>
+<h2 id="what-i-learned">What I learned</h2>
+<ol>
+<li>
+<p>Importance of clean and sufficient data
+<br />
+<br />
+The key takeaway for me from this project is the importance of clean and sufficient data while training a model.
+<br />
+<br />
+Without cleaning the data, the same models perform extremely poorly. Also, while training the same models with only
+the first dataset, the highest accuracy achieved was 68%. This shows the importance of sufficient amount of data
+required to train these models.</p>
+</li>
+<li>
+<p>Hyperparameter tuning and their impact on under- and over-fitting
+<br />
+<br />
+The above results were achieved after experimenting with the different values of various hyperparameters such as learning
+rate, kernel sizes, number of epochs, batch size, etc. I learned how to tune these hyperparameters while dealing with
+under- and over-fitting of data.</p>
+</li>
+<li>
+<p>PyTorch Library
+<br />
+<br />
+I learned how to create Deep Learning models using PyTorch library and explored other PyTorch classes and functions.
+I learned how to write a Forward and a Backward pass for the models and how to evaluate the training and validation
+losses during training.</p>
+</li>
+</ol>
+<p>Finally, I also learned that CNNs also perform great while dealing with text data!</p>
+
+                </p>
+            </div><span class="navFull">
+    
+
+
+
+
+    
+    
+
+<span>
+    <a href="/">Home</a>
+    <span>&#8192;|&#8192;</span>
+    <a href="./..">/projects/</a>
+</span>
+
+
+
+    
+
+    <span id="navbar-links">
+        <span class="tooltip"><span class="tooltiptext">Github</span><a href="https://github.com/himanshu808" target="_blank"><i class="fa fa-github navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Linkedin</span><a href="https://www.linkedin.com/in/himanshushah10/" target="_blank"><i class="fa fa-linkedin-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Email</span><a href="mailto:himansss@uci.edu, himanshushah.alt@gmail.com" target="_blank"><i class="fa fa-envelope-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Resume</span><a href="/himanshu_resume.pdf" target="_blank"><i class="fa fa-file navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Website</span><a href="https://himanshu808.github.io/" target="_blank"><i class="fa fa-link navbar-fa"></i></a></span>
+    </span>
+
+    <span class="navCredits">
+        Hugo theme by
+        <a href="https://github.com/Yukuro/hugo-theme-shell" target="_blank" rel="noopener">Yukuro</a>
+    </span>
+</span>
+
+        </div>
+    </body>
+</html>
