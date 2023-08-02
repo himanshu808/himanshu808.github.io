@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-    <title>Visible Alpha - SE 1</title>
+    <title>TableGen Formatter</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5R07KJL4R"></script>
     <script>
@@ -64,69 +64,61 @@ gtag('config', 'G-W5R07KJL4R');
 
 </head>
 <head>
-        <link rel="stylesheet" href="/experience/experience-single.css">
+        <link rel="stylesheet" href="/projects/project-single.css">
     </head>
     <body>
         <div style="position:relative; width: 100%;">
             <span style="text-align: center; color: #BBBBBB;">
                 <h1>
-                    Visible Alpha
+                    TableGen Formatter
+                    
+                        <a href="https://github.com/himanshu808/llvm-project/tree/temp-branch" target="_blank"><i class="fa fa-link" style="font-size: 20px;"></i></a>
+                    
                 </h1>
             </span>
-            <div class="exp-tags">
+
+            <div class="pro-tags">
                 
                 <b>tags: </b>
                 
-                        <a href="/tags/python"><i class="fa fa-tag indi-tag"> <tags-elem>Python</tags-elem></i></a>
+                        <a href="/tags/c&#43;&#43;"><i class="fa fa-tag indi-tag"> <tags-elem>C&#43;&#43;</tags-elem></i></a>
                     
-                        <a href="/tags/django"><i class="fa fa-tag indi-tag"> <tags-elem>Django</tags-elem></i></a>
+                        <a href="/tags/llvm"><i class="fa fa-tag indi-tag"> <tags-elem>LLVM</tags-elem></i></a>
                     
-                        <a href="/tags/sql"><i class="fa fa-tag indi-tag"> <tags-elem>SQL</tags-elem></i></a>
-                    
-                        <a href="/tags/nosql"><i class="fa fa-tag indi-tag"> <tags-elem>NoSQL</tags-elem></i></a>
-                    
-                        <a href="/tags/back-end"><i class="fa fa-tag indi-tag"> <tags-elem>Back-end</tags-elem></i></a>
+                        <a href="/tags/compilers"><i class="fa fa-tag indi-tag"> <tags-elem>Compilers</tags-elem></i></a>
                     
                 
             </div>
+
             <div class="single-content">
-                <h3>
-                    Position: Software Engineer 1
-                    <br />
-                    <br />
-                    <i class="fa fa-calendar-days exp-duration"> <tags-elem>Jun 2020 - Mar 2022</tags-elem></i>
-                    <br />
-                    <br />
-                    Tech Stack: Python, Django, MySQL, MongoDB, Redis, RabbitMQ, Amazon S3, Docker, Jenkins, Sentry, Git
-                </h3>
                 <p>
-                    <h2 id="responsibilitiesaccomplishments">Responsibilities/Accomplishments</h2>
-<p>As a Software Engineer in the Data feed and APIs team, I -</p>
-<ul>
-<li>Overcame architectural challenges associated with a monolithic design by implementing a microservice-based enterprise
-fintech ETL application. The solution delivers high-volume, real-time data to clients with low latency,
-using the latest technologies such as <code>Django</code>, <code>MySQL</code>, <code>MongoDB</code>, and <code>Redis</code>, driving $2 million in revenue</li>
-<li>Optimized file dispatch latency by 80% using <code>RabbitMQ</code> &amp; <code>Celery</code> for asynchronous task execution (60 to 10 seconds)</li>
-<li>Designed <code>REST APIs</code> and added APIs and <code>AWS S3</code> as data delivery channels to ease data consumption for clients</li>
-<li>Augmented error logging by leveraging the latest features of <code>Sentry</code> and by implementing a global logger,
-saving 25% of the team’s time spent on debugging and bug fixes</li>
-<li>Solved complex performance problems by resolving production issues, gaining exposure to dealing with large-scale
-software design issues, and avoiding performance bottlenecks</li>
-<li>Worked on projects through different phases of the software development life cycle including writing unit and
-automation tests and deploying projects on servers using <code>Docker</code> and <code>Jenkins</code></li>
-<li>Wrote unit tests using the <code>Pytest</code> framework and increased unit test code coverage from 11% to 77%</li>
-<li>Carried out load and performance testing of the APIs using <code>JMeter</code></li>
-<li>Set up a dev environment using Docker and Jenkins for dev testing</li>
-<li>Wrote backward compatible queries during MySQL version migration</li>
-</ul>
-<h2 id="highlights-outside-the-realm-of-my-role">Highlights outside the realm of my role</h2>
-<ul>
-<li>Augmented QA team&rsquo;s automation test suite using <code>Cucumber</code> test framework and Behavioral Driven Development (BDD)</li>
-<li>Set up weekly meetings with the Product team manager to understand the product better and bridge the gap between
-the product and the dev team</li>
-</ul>
-<br />
-I am happy to connect to talk about my work, so reach out to know more!
+                    <h2 id="about">About</h2>
+<p>TableGen is a domain-specific language and code generator used in LLVM compiler infrastructure.
+It allows developers to define target-specific instruction sets, register classes, and machine descriptions in a concise
+and declarative manner.</p>
+<p>TableGen&rsquo;s main purpose is to simplify the process of generating code for instruction selection, register allocation,
+and other compiler optimizations. By utilizing TableGen, LLVM can efficiently target a wide range of hardware
+architectures and provide a flexible and modular framework for compiler development.</p>
+<p>Here is an example of TableGen code -</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>// MyTargetInstrInfo.td
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>let InstructionSet <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MyTarget&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def ADD : MyInstruction&lt;<span style="color:#e6db74">&#34;add&#34;</span>, OpRegClass, <span style="color:#f92672">(</span>outs RRegs:$dst<span style="color:#f92672">)</span>, <span style="color:#f92672">(</span>ins RRegs:$src1, RRegs:$src2<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>                       <span style="color:#e6db74">&#34;add </span>$dst<span style="color:#e6db74">, </span>$src1<span style="color:#e6db74">, </span>$src2<span style="color:#e6db74">&#34;</span>&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def SUB : MyInstruction&lt;<span style="color:#e6db74">&#34;sub&#34;</span>, OpRegClass, <span style="color:#f92672">(</span>outs RRegs:$dst<span style="color:#f92672">)</span>, <span style="color:#f92672">(</span>ins RRegs:$src1, RRegs:$src2<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>                       <span style="color:#e6db74">&#34;sub </span>$dst<span style="color:#e6db74">, </span>$src1<span style="color:#e6db74">, </span>$src2<span style="color:#e6db74">&#34;</span>&gt;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def MUL : MyInstruction&lt;<span style="color:#e6db74">&#34;mul&#34;</span>, OpRegClass, <span style="color:#f92672">(</span>outs RRegs:$dst<span style="color:#f92672">)</span>, <span style="color:#f92672">(</span>ins RRegs:$src1, RRegs:$src2<span style="color:#f92672">)</span>,
+</span></span><span style="display:flex;"><span>                       <span style="color:#e6db74">&#34;mul </span>$dst<span style="color:#e6db74">, </span>$src1<span style="color:#e6db74">, </span>$src2<span style="color:#e6db74">&#34;</span>&gt;;
+</span></span></code></pre></div><h2 id="problem">Problem</h2>
+<p>In LLVM, TableGen is used widely in many subprojects to specify target-specific information and also in MLIR.
+Overall, there is a substantial amount of TableGen code (340+ KLOC) in LLVM, and <em>yet</em> it lacks its own code formatter.</p>
+<h2 id="aim">Aim</h2>
+<p>The aim of this project was to create a code formatter for TableGen language that improves the readability,
+maintainability and consistency of TableGen code. The aim is also to upstream these changes to the LLVM repo so that the
+community can benefit from this formatter.</p>
 
                 </p>
             </div><span class="navFull">
@@ -141,7 +133,7 @@ I am happy to connect to talk about my work, so reach out to know more!
 <span>
     <a href="/">Home</a>
     <span>&#8192;|&#8192;</span>
-    <a href="./..">/experience/</a>
+    <a href="./..">/projects/</a>
 </span>
 
 

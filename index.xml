@@ -6,7 +6,25 @@
     <description>Recent content on Himanshu Shah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Apr 2023 22:35:50 -0400</lastBuildDate><atom:link href="https://himanshu808.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Aug 2023 09:33:39 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cron-Ease</title>
+      <link>https://himanshu808.github.io/projects/cron-ease/</link>
+      <pubDate>Mon, 27 Mar 2023 14:29:41 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/projects/cron-ease/</guid>
+      <description>A user interface for managing cron jobs</description>
+    </item>
+    
+    <item>
+      <title>TableGen Formatter</title>
+      <link>https://himanshu808.github.io/projects/tablegen-formatter/</link>
+      <pubDate>Mon, 31 Jul 2023 09:22:05 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/projects/tablegen-formatter/</guid>
+      <description>A code formatter/prettier for the TableGen language</description>
+    </item>
+    
     <item>
       <title>Tweet Sentiment Analysis</title>
       <link>https://himanshu808.github.io/projects/tweet-sentiment-analysis/</link>
@@ -14,15 +32,6 @@
       
       <guid>https://himanshu808.github.io/projects/tweet-sentiment-analysis/</guid>
       <description>Categorizing tweets as positive or negative</description>
-    </item>
-    
-    <item>
-      <title>Cron-Ease</title>
-      <link>https://himanshu808.github.io/projects/cron-ui/</link>
-      <pubDate>Mon, 27 Mar 2023 14:29:41 -0700</pubDate>
-      
-      <guid>https://himanshu808.github.io/projects/cron-ui/</guid>
-      <description>A user interface for managing cron jobs</description>
     </item>
     
     <item>
@@ -62,6 +71,16 @@
     </item>
     
     <item>
+      <title>Viant Technology - Full Stack Intern</title>
+      <link>https://himanshu808.github.io/experience/viant/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/viant/</guid>
+      <description>Responsibilities/Accomplishments As a Full Stack Intern in the Platform team I -
+Automated the manual process of adding third-party segments to the database by adding an upload option in the UI using Angular creating a new microservice in Golang using AWS Lambda, APIGateway, and S3; saved 6+ engineer hours per week Developing a feature for transcoding videos to audio using AWS MediaConvert, SNS, DynamoDB, and EventBridge, increasing the bid eligibility for clients’ ad campaigns and thereby increasing the generated revenue Contributed to the architecture for the Video-to-Audio Conversion project Leveraged Go Generics to make it easier to add/fetch objects from DynamoDB </description>
+    </item>
+    
+    <item>
       <title>Visible Alpha - SE 2</title>
       <link>https://himanshu808.github.io/experience/va-2/</link>
       <pubDate>Thu, 02 Mar 2023 19:38:10 -0800</pubDate>
@@ -78,7 +97,7 @@ Engineered the framework for adding Snowflake as a data delivery channel using F
       
       <guid>https://himanshu808.github.io/experience/va-1/</guid>
       <description>Responsibilities/Accomplishments As a Software Engineer in the Data feed and APIs team, I -
-Overcame architectural challenges associated with a monolithic design by implementing a microservice-based enterprise fintech ETL application. The solution delivers high-volume, real-time data to clients with low latency, using the latest technologies such as Django, MySQL, MongoDB, and Redis, driving $2 million in revenue Optimized file dispatch latency by 90% using RabbitMQ &amp;amp; Celery for asynchronous task execution (60 to 10 seconds) Designed REST APIs and added APIs and AWS S3 as data delivery channels to ease data consumption for clients Augmented error logging by leveraging the latest features of Sentry and by implementing a global logger, saving 25% of the team’s time spent on debugging and bug fixes Solved complex performance problems by resolving production issues, gaining exposure to dealing with large-scale software design issues, and avoiding performance bottlenecks Worked on projects through different phases of the software development life cycle including writing unit and automation tests and deploying projects on servers using Docker and Jenkins Wrote unit tests using the Pytest framework and increased unit test code coverage from 11% to 77% Carried out load and performance testing of the APIs using JMeter Set up a dev environment using Docker and Jenkins for dev testing Wrote backward compatible queries during MySQL version migration Highlights outside the realm of my role Augmented QA team&amp;rsquo;s automation test suite using Cucumber test framework and Behavioral Driven Development (BDD) Set up weekly meetings with the Product team manager to understand the product better and bridge the gap between the product and the dev team I am happy to connect to talk about my work, so reach out to know more!</description>
+Overcame architectural challenges associated with a monolithic design by implementing a microservice-based enterprise fintech ETL application. The solution delivers high-volume, real-time data to clients with low latency, using the latest technologies such as Django, MySQL, MongoDB, and Redis, driving $2 million in revenue Optimized file dispatch latency by 80% using RabbitMQ &amp;amp; Celery for asynchronous task execution (60 to 10 seconds) Designed REST APIs and added APIs and AWS S3 as data delivery channels to ease data consumption for clients Augmented error logging by leveraging the latest features of Sentry and by implementing a global logger, saving 25% of the team’s time spent on debugging and bug fixes Solved complex performance problems by resolving production issues, gaining exposure to dealing with large-scale software design issues, and avoiding performance bottlenecks Worked on projects through different phases of the software development life cycle including writing unit and automation tests and deploying projects on servers using Docker and Jenkins Wrote unit tests using the Pytest framework and increased unit test code coverage from 11% to 77% Carried out load and performance testing of the APIs using JMeter Set up a dev environment using Docker and Jenkins for dev testing Wrote backward compatible queries during MySQL version migration Highlights outside the realm of my role Augmented QA team&amp;rsquo;s automation test suite using Cucumber test framework and Behavioral Driven Development (BDD) Set up weekly meetings with the Product team manager to understand the product better and bridge the gap between the product and the dev team I am happy to connect to talk about my work, so reach out to know more!</description>
     </item>
     
     <item>

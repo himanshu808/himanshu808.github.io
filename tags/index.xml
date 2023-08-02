@@ -6,7 +6,97 @@
     <description>Recent content in Tags on Himanshu Shah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Apr 2023 22:35:50 -0400</lastBuildDate><atom:link href="https://himanshu808.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Aug 2023 09:33:39 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Angular</title>
+      <link>https://himanshu808.github.io/tags/angular/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://himanshu808.github.io/tags/aws/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Full Stack</title>
+      <link>https://himanshu808.github.io/tags/full-stack/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/full-stack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://himanshu808.github.io/tags/golang/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microservices</title>
+      <link>https://himanshu808.github.io/tags/microservices/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://himanshu808.github.io/tags/sql/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TypeScript</title>
+      <link>https://himanshu808.github.io/tags/typescript/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://himanshu808.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Mon, 31 Jul 2023 09:22:05 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compilers</title>
+      <link>https://himanshu808.github.io/tags/compilers/</link>
+      <pubDate>Mon, 31 Jul 2023 09:22:05 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/compilers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LLVM</title>
+      <link>https://himanshu808.github.io/tags/llvm/</link>
+      <pubDate>Mon, 31 Jul 2023 09:22:05 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/tags/llvm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CNN</title>
       <link>https://himanshu808.github.io/tags/cnn/</link>
@@ -67,24 +157,6 @@
       <pubDate>Sat, 01 Apr 2023 22:35:50 -0400</pubDate>
       
       <guid>https://himanshu808.github.io/tags/rnn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Angular</title>
-      <link>https://himanshu808.github.io/tags/angular/</link>
-      <pubDate>Mon, 27 Mar 2023 14:29:41 -0700</pubDate>
-      
-      <guid>https://himanshu808.github.io/tags/angular/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://himanshu808.github.io/tags/golang/</link>
-      <pubDate>Mon, 27 Mar 2023 14:29:41 -0700</pubDate>
-      
-      <guid>https://himanshu808.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -152,24 +224,6 @@
     </item>
     
     <item>
-      <title>SQL</title>
-      <link>https://himanshu808.github.io/tags/sql/</link>
-      <pubDate>Thu, 02 Mar 2023 19:07:33 -0800</pubDate>
-      
-      <guid>https://himanshu808.github.io/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Compilers</title>
-      <link>https://himanshu808.github.io/tags/compilers/</link>
-      <pubDate>Thu, 02 Mar 2023 16:58:55 -0800</pubDate>
-      
-      <guid>https://himanshu808.github.io/tags/compilers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Data Flow Analysis</title>
       <link>https://himanshu808.github.io/tags/data-flow-analysis/</link>
       <pubDate>Thu, 02 Mar 2023 16:58:55 -0800</pubDate>
@@ -211,15 +265,6 @@
       <pubDate>Thu, 02 Mar 2023 01:44:30 -0800</pubDate>
       
       <guid>https://himanshu808.github.io/tags/data-structures/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://himanshu808.github.io/tags/c&#43;&#43;/</link>
-      <pubDate>Sun, 26 Feb 2023 14:58:11 -0800</pubDate>
-      
-      <guid>https://himanshu808.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     

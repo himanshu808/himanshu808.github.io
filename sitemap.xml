@@ -2,14 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://himanshu808.github.io/projects/tweet-sentiment-analysis/</loc>
-    <lastmod>2023-04-03T15:12:06-04:00</lastmod>
+    <loc>https://himanshu808.github.io/projects/cron-ease/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
-    <loc>https://himanshu808.github.io/projects/cron-ui/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
+    <loc>https://himanshu808.github.io/projects/tablegen-formatter/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/projects/tweet-sentiment-analysis/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/projects/smpl-compiler/</loc>
-    <lastmod>2023-03-08T23:20:26-08:00</lastmod>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/projects/dns-server/</loc>
     <lastmod>2023-03-22T15:08:21-07:00</lastmod>
@@ -20,41 +23,71 @@
     <loc>https://himanshu808.github.io/projects/chat-room/</loc>
     <lastmod>2023-03-09T00:34:21-08:00</lastmod>
   </url><url>
-    <loc>https://himanshu808.github.io/tags/cnn/</loc>
-    <lastmod>2023-04-03T15:12:06-04:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/deep-learning/</loc>
-    <lastmod>2023-04-03T15:12:06-04:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/machine-learning/</loc>
-    <lastmod>2023-04-03T15:12:06-04:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/nlp/</loc>
-    <lastmod>2023-04-03T15:12:06-04:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/projects/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/python/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/pytorch/</loc>
-    <lastmod>2023-04-03T15:12:06-04:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/rnn/</loc>
-    <lastmod>2023-04-03T15:12:06-04:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
-  </url><url>
     <loc>https://himanshu808.github.io/tags/angular/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/aws/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/experience/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/full-stack/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/golang/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/microservices/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/sql/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/typescript/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/experience/viant/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/compilers/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/llvm/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/projects/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/cnn/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/deep-learning/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/machine-learning/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/nlp/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/python/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/pytorch/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
+  </url><url>
+    <loc>https://himanshu808.github.io/tags/rnn/</loc>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/socket-programming/</loc>
     <lastmod>2023-03-22T15:08:21-07:00</lastmod>
@@ -62,14 +95,11 @@
     <loc>https://himanshu808.github.io/tags/tkinter/</loc>
     <lastmod>2023-03-09T00:34:21-08:00</lastmod>
   </url><url>
-    <loc>https://himanshu808.github.io/experience/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
-  </url><url>
     <loc>https://himanshu808.github.io/tags/falcon/</loc>
     <lastmod>2023-06-15T13:14:28-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/nosql/</loc>
-    <lastmod>2023-06-15T13:14:28-07:00</lastmod>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/snowflake/</loc>
     <lastmod>2023-06-15T13:14:28-07:00</lastmod>
@@ -78,19 +108,13 @@
     <lastmod>2023-06-15T13:14:28-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/back-end/</loc>
-    <lastmod>2023-04-08T18:56:26-07:00</lastmod>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/django/</loc>
-    <lastmod>2023-04-08T18:56:26-07:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/sql/</loc>
-    <lastmod>2023-04-08T18:56:26-07:00</lastmod>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/experience/va-1/</loc>
-    <lastmod>2023-04-08T18:56:26-07:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/compilers/</loc>
-    <lastmod>2023-03-22T15:36:02-07:00</lastmod>
+    <lastmod>2023-08-01T23:57:55-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/data-flow-analysis/</loc>
     <lastmod>2023-03-22T15:36:02-07:00</lastmod>
@@ -112,9 +136,6 @@
   </url><url>
     <loc>https://himanshu808.github.io/tags/data-structures/</loc>
     <lastmod>2023-03-08T23:20:26-08:00</lastmod>
-  </url><url>
-    <loc>https://himanshu808.github.io/tags/c&#43;&#43;/</loc>
-    <lastmod>2023-03-22T15:08:21-07:00</lastmod>
   </url><url>
     <loc>https://himanshu808.github.io/tags/computer-network/</loc>
     <lastmod>2023-03-22T15:08:21-07:00</lastmod>

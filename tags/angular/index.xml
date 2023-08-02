@@ -6,14 +6,24 @@
     <description>Recent content in Angular on Himanshu Shah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Mar 2023 14:29:41 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Aug 2023 09:33:39 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/tags/angular/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cron-Ease</title>
-      <link>https://himanshu808.github.io/projects/cron-ui/</link>
+      <link>https://himanshu808.github.io/projects/cron-ease/</link>
       <pubDate>Mon, 27 Mar 2023 14:29:41 -0700</pubDate>
       
-      <guid>https://himanshu808.github.io/projects/cron-ui/</guid>
+      <guid>https://himanshu808.github.io/projects/cron-ease/</guid>
       <description>A user interface for managing cron jobs</description>
+    </item>
+    
+    <item>
+      <title>Viant Technology - Full Stack Intern</title>
+      <link>https://himanshu808.github.io/experience/viant/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/viant/</guid>
+      <description>Responsibilities/Accomplishments As a Full Stack Intern in the Platform team I -
+Automated the manual process of adding third-party segments to the database by adding an upload option in the UI using Angular creating a new microservice in Golang using AWS Lambda, APIGateway, and S3; saved 6+ engineer hours per week Developing a feature for transcoding videos to audio using AWS MediaConvert, SNS, DynamoDB, and EventBridge, increasing the bid eligibility for clients’ ad campaigns and thereby increasing the generated revenue Contributed to the architecture for the Video-to-Audio Conversion project Leveraged Go Generics to make it easier to add/fetch objects from DynamoDB </description>
     </item>
     
   </channel>
