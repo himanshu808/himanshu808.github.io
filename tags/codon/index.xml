@@ -16,5 +16,15 @@
       <description>What is Codon?</description>
     </item>
     
+    <item>
+      <title>Viant Technology - Full Stack Intern</title>
+      <link>https://himanshu808.github.io/experience/viant/</link>
+      <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/experience/viant/</guid>
+      <description> Responsibilities/Accomplishments As a Full Stack Intern in the Platform team I -
+Developed a feature for extracting audio from videos using `AWS MediaConvert`, `SNS`, `DynamoDB`, and `EventBridge`, increasing the bid eligibility for clients’ ad campaigns and thereby achieving a lift of `25%` in the generated revenue (projected) Added an upload functionality in the UI to automate the process of adding third-party segments to the database using `Angular`,`Golang`, `AWS Lambda`, `APIGateway`, and `S3`, saving `8+` engineer hours Contributed to the architecture for the Video-to-Audio Conversion project Leveraged Go Generics to make it easier to add/fetch objects from `DynamoDB` Highlights outside the realm of my role Improved performance of existing Python scripts by `30x` on average using Codon, reducing costs by at least `15x` </description>
+    </item>
+    
   </channel>
 </rss>
