@@ -1,21 +1,19 @@
 .single-content {
     color: #BBBBBB;
-    position: relative;
+    /*position: relative;*/
     text-align: left;
-    top: 15%;
+    margin-top: 3%;
+    margin-left: 10%;
+    padding-bottom: 100px;
     width: 80%;
+    top: 15%;
 }
 
-.til-meta {
-    text-align: center; 
-    color: #BBBBBB; 
-    position: absolute;
+.til-tags {
+    text-align: center;
 }
 
-#card-tag {
-    padding-left: 3px;
-}
 
-.time {
-    padding-left: 15px;
-}
+/*.time {*/
+/*    padding-left: 15px;*/
+/*}*/

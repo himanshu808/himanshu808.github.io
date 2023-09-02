@@ -105,8 +105,8 @@ gtag('config', 'G-W5R07KJL4R');
 negative sentiment. While implementing this sentiment analysis model, I explore different <code>Deep Learning</code> models such as
 1-D Convolutional Neural Networks (<code>CNN</code>) and Recurrent Neural Networks (<code>RNN</code>). In this project, I compare the performance
 of the Deep Learning models with <code>Machine Learning</code> techniques such as <code>Logistic Regression</code> and <code>Random Forest Classifier</code>.</p>
-<h2 id="implementation-process">Implementation Process</h2>
-<h3 id="data-exploration">Data Exploration</h3>
+<h2 id="implementation">Implementation</h2>
+<h3 id="--data-exploration">- Data Exploration</h3>
 <ol>
 <li>
 <p>Twitter Sentiment Extraction
@@ -133,7 +133,7 @@ This dataset also encountered similar issues as the first dataset i.e. under-fit
 </ol>
 <p>To get a more generalized and sufficiently large dataset, all the above three datasets were combined with each
 datapoint/tweet having either a positive or negative label.</p>
-<h3 id="data-preprocessing">Data Preprocessing</h3>
+<h3 id="--data-preprocessing">- Data Preprocessing</h3>
 <ol>
 <li>
 <p>Data cleaning
@@ -161,7 +161,7 @@ The tweets were padded equally on both sides with 0s to have a uniform length of
 less than 3 were discarded.</p>
 </li>
 </ol>
-<h3 id="model-exploration">Model Exploration</h3>
+<h3 id="--model-exploration">- Model Exploration</h3>
 <p>In this step, I compare the performance of various Deep Learning and Machine Learning models for tweet sentiment
 analysis. I experimented with different values for hyperparameters such as learning rate, number of epochs, kernel size,
 etc. in the model exploration step.</p>
@@ -227,7 +227,7 @@ All words that were present in less than 5 different tweets were discarded by se
 <li>100 estimators with a maximum depth of 5 and 5 minimum lead nodes were used,</li>
 <li>The parameters were determined by testing various scenarios of under- and over-fitting.</li>
 </ul>
-<h3 id="performance-validation">Performance Validation</h3>
+<h3 id="--performance-validation">- Performance Validation</h3>
 <p>To compare the performance of all the models, I used an 80-20 train-test split of the dataset.
 <br />
 For CNN and RNN, an L2 regularization was used to prevent over-fitting and increase validation accuracy.</p>
@@ -267,7 +267,7 @@ For CNN and RNN, an L2 regularization was used to prevent over-fitting and incre
   </tr>
 </table>
 <figcaption style="text-align: center; margin-top: 5px">Performance comparison of all the models</figcaption>
-<h2 id="what-i-learned">What I learned</h2>
+<h1 id="what-i-learned">What I learned</h1>
 <ol>
 <li>
 <p>Importance of clean and sufficient data

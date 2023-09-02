@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html><head>
+    <title>Codon: A high-performance Python Compiler</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5R07KJL4R"></script>
+    <script>
+        const host = window.location.hostname;
+        if(host !== "localhost")
+        {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+gtag('config', 'G-W5R07KJL4R');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Himanshu">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="icon" type="image/x-icon" href="/images/myicon.png">
+    <script src="https://kit.fontawesome.com/204973324d.js" crossorigin="anonymous"></script>
+    <style>
+
+    @import "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap";:root{--cursor-visibility:hidden}html,body{width:100%;height:100%;overflow:auto;font-family:inconsolata,monospace;font-size:4vmin;line-height:4.1vmin;font-weight:400}body{margin:0;display:flex;flex-direction:row;justify-content:center;align-items:center}#content{min-width:82vmin;min-height:82vmin}.cursor,#activity-title:after,#activity-content:after,#cd:after,#whoami:after,#cat:after,#tree:after{visibility:var(--cursor-visibility);content:"|";overflow:hidden;color:#fff;animation:blink 500ms linear infinite alternate}@keyframes blink{0%{opacity:0}100%{opacity:1}}@media only screen and (min-width:768px){body{font-size:2.5vmin;line-height:2.6vmin}#content{min-width:60vmin}}tags-elem{font-family:inconsolata,monospace}pre{border:1px solid #cacaca;line-height:1.2em;padding:10px;overflow:auto;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;background-color:#fafafb;color:#393939;margin:0}:not(pre)>code{font:inherit;color:#000;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #aaa;background-color:#adadad;padding:0 1px;display:inline-block;margin:0}figure{text-align:center}figcaption{font-size:15px}table,th,td{border:1px groove #fff;border-collapse:collapse}th,td{text-align:center;padding:1px}table{table-layout:fixed;width:100%}:root{--cursor-visibility:hidden}body{align-items:unset;overflow-y:scroll}#content{max-width:80vmin}pre{overflow-x:scroll;white-space:pre}@keyframes blink{0%{opacity:0}100%{opacity:1}}
+    
+    
+    body{background:#1B1D1E; color: #BBBBBB}body #terminal{color:#BBBBBB}body #user{color:#5FE0B1}body #dir{color:#6DF2FF}body .Typewriter__cursor{color:#BBBBBB}a{color:#BBBBBB}
+
+        
+    .navFull {
+        background-color: #353535;
+        font-family: "Courier New";
+        font-size: 17px;
+        display: inline;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        padding-top: 5px;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+
+    .navCredits {
+        float: right;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+
+    #content::after {
+        content: "\a\a";
+        white-space: pre;
+    }
+        
+        
+</style>
+
+
+
+
+</head>
+<head>
+        <link rel="stylesheet" href="/til/til-single.css">
+    </head>
+    <body>
+        <div style="position:relative; width: 100%;">
+            <span style="text-align: center; color: #BBBBBB;">
+                <h2>Codon: A high-performance Python Compiler</h2>
+            </span>
+
+            <div class="til-tags">
+                
+                
+                        <a href="/tags/python"><i class="fa fa-tag" id="card-tag"> <tags-elem>Python</tags-elem></i></a>
+                    
+                        <a href="/tags/codon"><i class="fa fa-tag" id="card-tag"> <tags-elem>Codon</tags-elem></i></a>
+                    
+                |
+                
+                
+                <i class="fa fa-clock-o time"> <tags-elem>3 minutes (about 603 words)</tags-elem></i>
+            </div>
+
+            <div class="single-content">
+                <p>
+                    <head>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <style>
+        p {
+            margin: 0px;
+        }
+        li:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<h2 id="what-is-codon">What is Codon?</h2>
+<p>Codon is a high-performance Python compiler that compiles Python code to native machine code without any runtime overhead.
+Typical speedups over Python are on the order of 100x or more, on a single thread. Codon supports native multithreading
+which can lead to speedups many times higher still.<sup><a href="https://docs.exaloop.io/codon">[1]</a></sup>
+It uses the LLVM framework to compile to LLVM bytecode and then to specific machine code.<sup><a href="https://medium.com/intuition/codon-a-python-compiler-3d5322e1c0a5">[2]</a></sup></p>
+<br />
+<p>In simple terms, it is Python but compiled.</p>
+<br />
+<p>I first learned about Codon from an episode of C++ Weekly by Jason Turner
+(<a href="https://youtu.be/vXahGgWfzcA?si=rIpdZbr9NRycgGA0">Ep 366 - C++ vs Compiled Python (Codon)</a>) where he compares the performance
+of Python, C++, Python (jit), Python with C++ (cppyy) and Codon along with his <a href="https://youtu.be/lhqP50YVT-I?si=EGRjMUjOD6WLAckm">Ep 362</a>.
+He compares the performance by running his version of Conway&rsquo;s game of life.</p>
+<br />
+<p>Since then, I worked with Codon for the first time during my internship at <a href="../../experience/viant/">Viant</a>. I worked on a
+POC where I improved the performance of their Python scripts by <code>30x</code> on average on a single thread.</p>
+<br />
+<h2 id="installing-codon">Installing Codon</h2>
+<p><em>These installation steps would be specific to macOS (arm64) and may not work in every case</em></p>
+<h3 id="--installing-pre-built-binaries">- Installing pre-built binaries</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Execute the following command (from https://github.com/exaloop/codon#install)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Press &#34;y&#34; to add Codon to PATH during installation</span>
+</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://exaloop.io/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="--setting-codon_python-environment-variable">- Setting CODON_PYTHON environment variable</h3>
+<p>We need to set the <code>CODON_PYTHON</code> env var to point to the appropriate Python shared library. On macOS with a brew-installed
+python, this shared library can be something similar to -</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/homebrew/Cellar/python@3.11/3.11.3/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Run this command to find the base path of Python.framework</span>
+</span></span><span style="display:flex;"><span>brew ls python3
+</span></span></code></pre></div><br />
+<p>Once found, set the env variable in the shell configuration file (~/.zshrc by default). Add the following line to the
+end of the file -</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export CODON_PYTHON<span style="color:#f92672">=</span>&lt;path-to-dylib-python-file&gt;
+</span></span></code></pre></div><br />
+<h2 id="basics">Basics</h2>
+<p>If you know Python, you already know 99% of Codon. You can start using Codon directly, while keeping some differences in mind -</p>
+<ol>
+<li>In most cases you need to explicitly specify data types. In cases where you do not specify the data type and Codon
+cannot infer the type, it will treat as a Generic Python Object (PyObj)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(x: int, y: int) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
+</span></span></code></pre></div><ol start="2">
+<li>It&rsquo;s best to keep the collections homogeneous or specifying the types during compile-time</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>t: tuple[str, int, bool]
+</span></span><span style="display:flex;"><span>t <span style="color:#f92672">=</span> (<span style="color:#e6db74">&#34;abc&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l: list[str] <span style="color:#f92672">=</span> [] <span style="color:#75715e"># homogeneous lists</span>
+</span></span><span style="display:flex;"><span>l<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;xyz&#34;</span>)
+</span></span></code></pre></div><ol start="3">
+<li>Once the CODON_PYTHON env var is set, you can import Python libraries using <em>from python import</em></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> python <span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span></code></pre></div><br />
+<h2 id="buildingrunning-codon-files">Building/Running Codon files</h2>
+<p>By default, the <code>codon run</code> command compiles and runs in the <code>DEBUG</code> mode. To compile and run with optimizations -</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>codon run --release &lt;path-to-codon-file&gt;
+</span></span></code></pre></div><br />
+<p>To build executables use the <code>codon build</code> command -</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>codon build --release -o &lt;exec-name&gt; &lt;path-to-codon-file&gt;
+</span></span></code></pre></div><br />
+<h2 id="python-vs-codon">Python vs. Codon</h2>
+<p>To compare the Python vs. Codon performance, we will use the following code to calculate the 40th fibonacci number.
+This can be found in the <a href="https://docs.exaloop.io/codon/#codon-at-a-glance">documentation</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># fib.py</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fib</span>(n):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> n <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">else</span> fib(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fib(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>t0 <span style="color:#f92672">=</span> time()
+</span></span><span style="display:flex;"><span>ans <span style="color:#f92672">=</span> fib(<span style="color:#ae81ff">40</span>)
+</span></span><span style="display:flex;"><span>t1 <span style="color:#f92672">=</span> time()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Computed fib(40) = </span><span style="color:#e6db74">{</span>ans<span style="color:#e6db74">}</span><span style="color:#e6db74"> in </span><span style="color:#e6db74">{</span>t1 <span style="color:#f92672">-</span> t0<span style="color:#e6db74">}</span><span style="color:#e6db74"> seconds.&#39;</span>)
+</span></span></code></pre></div><figure>
+    <img 
+    src="/images/til/codon-python/python-vs-codon-fib.png"
+    width="900"
+    height="500"
+    alt="Python vs. Codon - fib.py">
+  <figcaption>Comparing Python and Codon's performance by calculating the 40th fibonacci</figcaption>
+</figure>
+<p>From the above screenshot, we can see that Codon is <code>~38x</code> faster than Python!</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Working with Codon is really exciting. To have the syntax of Python and such improved performance is amazing. There
+are many other features that Codon has - native multithreading (no GIL!!), extending classes (including built-in classes
+like <code>int</code>, <code>str</code>), the <code>@python</code> decorator, and many more. I might explore more features in other posts related to Codon.</p>
+
+                </p>
+            </div><span class="navFull">
+    
+
+
+
+
+    
+    
+
+<span>
+    <a href="/">Home</a>
+    <span>&#8192;|&#8192;</span>
+    <a href="./..">/til/</a>
+</span>
+
+
+
+    
+
+    <span id="navbar-links">
+        <span class="tooltip"><span class="tooltiptext">Github</span><a href="https://github.com/himanshu808" target="_blank"><i class="fa fa-github navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Linkedin</span><a href="https://www.linkedin.com/in/himanshushah10/" target="_blank"><i class="fa fa-linkedin-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Email</span><a href="mailto:himansss@uci.edu, himanshushah.alt@gmail.com" target="_blank"><i class="fa fa-envelope-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Resume</span><a href="/himanshu_resume.pdf" target="_blank"><i class="fa fa-file navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Website</span><a href="https://himanshu808.github.io/" target="_blank"><i class="fa fa-link navbar-fa"></i></a></span>
+    </span>
+
+    <span class="navCredits">
+        Hugo theme by
+        <a href="https://github.com/Yukuro/hugo-theme-shell" target="_blank" rel="noopener">Yukuro</a>
+    </span>
+</span>
+
+        </div>
+    </body>
+</html>

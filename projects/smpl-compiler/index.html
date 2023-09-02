@@ -102,8 +102,8 @@ common subexpression elimination, and dead code elimination.
 <br />
 <br />
 <em>Note: this project is a WIP</em></p>
-<h2 id="implementation-process">Implementation Process</h2>
-<h3 id="generating-ssa-based-ir">Generating SSA-based IR</h3>
+<h2 id="implementation">Implementation</h2>
+<h3 id="--generating-ssa-based-ir">- Generating SSA-based IR</h3>
 <p>This step involved generating SSA-based IR of the given input program while leaving out arrays and functions.
 Optimizations such as copy propagation and common subexpression elimination are performed on the fly while generating
 the IR.</p>
@@ -126,7 +126,7 @@ instruction, I first check if either of the optimizations can be applied.
 The output of this step is best visualized once the IR Visualization tool is built.</p>
 </li>
 </ol>
-<h3 id="building-an-ir-visualization-tool">Building an IR visualization tool</h3>
+<h3 id="--building-an-ir-visualization-tool">- Building an IR visualization tool</h3>
 <p>The in-memory data structure of the previous step stores all the information required to build a visualization of the
 control flow graph (CFG) of the program.
 <br />
@@ -142,7 +142,7 @@ CFG.</p>
     >
   <figcaption>Optimized IR visualization of a program  <i>(Instr for 10 - z is reused)</i></figcaption>
 </figure>
-<h3 id="adding-array-operations">Adding array operations</h3>
+<h3 id="--adding-array-operations">- Adding array operations</h3>
 <p>In this step, I extend the compiler to include array operations. These operations also undergo common subexpression
 elimination to eliminate any redundant loads.
 <br />
@@ -158,7 +158,7 @@ ensures that the correct value is used every time an array element is accessed.<
   <figcaption>IR Visualization of array operations</figcaption>
 </figure>
 <p><em>Note: the <strong>kill</strong> instructions included here are just for debugging purpose</em></p>
-<h3 id="adding-support-for-user-defined-functions">Adding support for user-defined functions</h3>
+<h3 id="--adding-support-for-user-defined-functions">- Adding support for user-defined functions</h3>
 <p>After adding array operations, I added support for user-defined functions.
 <br />
 <br />

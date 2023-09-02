@@ -103,8 +103,8 @@ reasons that we have been able to scale the Internet to as we know it today!</p>
 hands dirty and implementing my own DNS server!</p>
 <p>This project is a basic implementation of a DNS server with the goal of understanding <em>how DNS works</em>,
 <em>what do the DNS question and response packets look like</em>, and playing around with the <em>dig</em> and <em>nc</em> commands.</p>
-<h2 id="implementation-process">Implementation Process</h2>
-<h3 id="understanding-the-dns-protocol">Understanding the DNS protocol</h3>
+<h2 id="implementation">Implementation</h2>
+<h3 id="--understanding-the-dns-protocol">- Understanding the DNS protocol</h3>
 <ol>
 <li>
 <p>Understanding the DNS packets
@@ -149,7 +149,7 @@ With the help of this specification, I was able to parse the response packets.</
 </figure>
 <br />
 <br />
-<h3 id="building-a-dns-stub-resolver">Building a DNS stub resolver</h3>
+<h3 id="--building-a-dns-stub-resolver">- Building a DNS stub resolver</h3>
 <p>A DNS stub resolver serves as an intermediary between the application requiring DNS resolution,
 and a recursive DNS resolver.</p>
 <ol>
@@ -174,7 +174,7 @@ I implemented a UDP client to send query packets to and receive response packets
   <figcaption>DNS Stub Resolver</figcaption>
 </figure>
 <p>In the image <strong>&ldquo;1&rdquo;</strong> represents the record type A.</p>
-<h3 id="adding-support-for-other-record-types">Adding Support for other Record Types</h3>
+<h3 id="--adding-support-for-other-record-types">- Adding Support for other Record Types</h3>
 <p>Up to this point, the DNS stub resolver only supported records of type A. In this step, I added support for other major
 record types such as CNAME, NS, MX and AAAA</p>
 <figure>
@@ -186,7 +186,7 @@ record types such as CNAME, NS, MX and AAAA</p>
     >
   <figcaption>DNS Stub Resolver (Type: AAAA)</figcaption>
 </figure>
-<h3 id="implementing-a-dns-proxy-server">Implementing a DNS Proxy Server</h3>
+<h3 id="--implementing-a-dns-proxy-server">- Implementing a DNS Proxy Server</h3>
 <p>To get one step closer to implementing a recursive DNS resolver, I first implemented a simple DNS proxy server.
 This server acts as a middleman and simply forwards the query to an actual DNS resolver and returns the response back
 to the client.</p>
@@ -229,7 +229,7 @@ to the client.</p>
   <figcaption>DNS client receives response from Proxy server</figcaption>
 </figure>
 <p>With this, my DNS proxy server is up and running and can respond to queries with different record types! 🥳 🎉</p>
-<h3 id="implementing-the-dns-recursive-resolver">Implementing the DNS recursive resolver</h3>
+<h3 id="--implementing-the-dns-recursive-resolver">- Implementing the DNS recursive resolver</h3>
 <p>This is the final step of this project where I go about implementing a recursive resolver. So far my server was simply
 a proxy server, dependent on another server to actually perform the lookup. In this step, I recursively resolve a domain
 starting right from the root servers, resolving the top-level domains first, i.e. when resolving <code>www.google.com</code>, the

@@ -2,14 +2,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
-    /*width: 120vw;*/
+    /*grid-auto-rows: minmax(100px, auto);*/
+    width: 100vw;
 }
 
 .pg-title {
     grid-row: 1;
     grid-column: 2/3;
+}
 
+.til-summary {
+    padding-left: 18px;
 }
 
 .card-tag {
@@ -20,8 +23,11 @@
     white-space: inherit;
     margin-top: 18%;
     margin-left: 18%;
-    height: 35%;
+    height: 45%;
+    /*contain: size;*/
+    /*max-height: 70%;*/
     width: 70%;
+    overflow-y: auto;
 }
 
 .card-tils {
@@ -34,7 +40,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,15);
     transition: 0.3s;
     white-space: inherit;
-    height: 15%;
+    /*height: 15%;*/
     padding-bottom: 15px;
     margin-bottom: 5px;
 }
@@ -62,10 +68,15 @@ a {
 
 
 .til-tag {
-    padding-top: 12px;
+    padding-top: 18px;
     padding-left: 10px;
 }
 
 .card-til:hover, .card-tag:hover {
   box-shadow: 0 16px 32px 0 rgba(0,0,0,10);
+}
+
+.til-duration {
+    margin-left: 10px;
+    margin-top: 10px;
 }

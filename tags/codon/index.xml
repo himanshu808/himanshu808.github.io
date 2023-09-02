@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codon on Himanshu Shah</title>
+    <link>https://himanshu808.github.io/tags/codon/</link>
+    <description>Recent content in Codon on Himanshu Shah</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Aug 2023 13:37:43 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/tags/codon/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codon: A high-performance Python Compiler</title>
+      <link>https://himanshu808.github.io/til/codon-python/</link>
+      <pubDate>Mon, 14 Aug 2023 13:37:43 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/til/codon-python/</guid>
+      <description>What is Codon?</description>
+    </item>
+    
+  </channel>
+</rss>

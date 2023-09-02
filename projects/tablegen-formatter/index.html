@@ -92,14 +92,29 @@ gtag('config', 'G-W5R07KJL4R');
 
             <div class="single-content">
                 <p>
-                    <h2 id="about">About</h2>
+                    <head>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <style>
+        p {
+            margin: 0px;
+        }
+        li:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<h3 id="md-blockmy-proposal-for-tablegen-formatter-got-selected-for-the-2023-llvm-developers-meeting-i-will-be-giving-a-short-technical-talk-on-this-project-alongside-my-teammate-nikhil-shout-out-to-min-yih-hsu-now-dr-min-yih-hsu-for-his-guidancemd-block"><md-block><em>My proposal for TableGen Formatter got selected for the 2023 LLVM Developers&rsquo; Meeting! I will be giving a short technical talk on this project alongside my teammate, Nikhil. Shout-out to Min-Yih Hsu (now Dr. Min-Yih Hsu) for his guidance!</em></md-block></h3>
+<h2 id="about">About</h2>
 <p>TableGen is a domain-specific language and code generator used in LLVM compiler infrastructure.
 It allows developers to define target-specific instruction sets, register classes, and machine descriptions in a concise
 and declarative manner.</p>
+<br />
 <p>TableGen&rsquo;s main purpose is to simplify the process of generating code for instruction selection, register allocation,
 and other compiler optimizations. By utilizing TableGen, LLVM can efficiently target a wide range of hardware
 architectures and provide a flexible and modular framework for compiler development.</p>
+<br />
 <p>Here is an example of TableGen code -</p>
+<br />
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>// MyTargetInstrInfo.td
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>let InstructionSet <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;MyTarget&#34;</span>;
@@ -112,13 +127,116 @@ architectures and provide a flexible and modular framework for compiler developm
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>def MUL : MyInstruction&lt;<span style="color:#e6db74">&#34;mul&#34;</span>, OpRegClass, <span style="color:#f92672">(</span>outs RRegs:$dst<span style="color:#f92672">)</span>, <span style="color:#f92672">(</span>ins RRegs:$src1, RRegs:$src2<span style="color:#f92672">)</span>,
 </span></span><span style="display:flex;"><span>                       <span style="color:#e6db74">&#34;mul </span>$dst<span style="color:#e6db74">, </span>$src1<span style="color:#e6db74">, </span>$src2<span style="color:#e6db74">&#34;</span>&gt;;
-</span></span></code></pre></div><h2 id="problem">Problem</h2>
+</span></span></code></pre></div><br />
+<h2 id="problem-statement">Problem Statement</h2>
 <p>In LLVM, TableGen is used widely in many subprojects to specify target-specific information and also in MLIR.
 Overall, there is a substantial amount of TableGen code (340+ KLOC) in LLVM, and <em>yet</em> it lacks its own code formatter.</p>
-<h2 id="aim">Aim</h2>
+<br />
+<p>Manually formatting TableGen code poses significant challenges for developers - inconsistent code styles,
+time-consuming formatting tasks, and increased errors, hindering code readability and maintenance.</p>
+<br />
+<p>These difficulties necessitate a solution that automates the formatting process, enabling developers to focus on the core
+aspects of TableGen development while ensuring clean and professional-looking code.</p>
+<h2 id="solution-overview">Solution Overview</h2>
 <p>The aim of this project was to create a code formatter for TableGen language that improves the readability,
-maintainability and consistency of TableGen code. The aim is also to upstream these changes to the LLVM repo so that the
-community can benefit from this formatter.</p>
+maintainability and consistency of TableGen code.</p>
+<br />
+<p>The TableGen Formatter stands as an exclusive tool designed specifically to address the complexities and challenges of
+formatting TableGen code, enabling developers to achieve consistent, and readable.</p>
+<br />
+<p>The aim is also to upstream these changes to the LLVM repo so that the community can benefit from this formatter.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="--getting-familiar-with-llvm">- Getting familiar with LLVM</h3>
+<p>The first step was to get familiar with LLVM and its project structure. I learned not just how to build LLVM but how to
+build it efficiently, as I knew we would have to build it several hundreds of time if not thousands.</p>
+<h3 id="--understanding-tablegen---its-syntax-lexer-and-parser">- Understanding TableGen - its syntax, lexer and parser</h3>
+<p>In this step, I understood the TableGen language basics. I went through the <a href="https://llvm.org/docs/TableGen/ProgRef.html">TableGen&rsquo;s grammar</a>
+to understand its syntax. The next step was to understand its lexer and parser. This was needed as I had to decide if I
+could reuse its lexer to develop the formatting tool.</p>
+<h3 id="--understanding-how-clang-format-works-under-the-hood">- Understanding how Clang-Format works under the hood</h3>
+<p>Since the aim was to build a formatting tool, I started looking into the working of Clang-Format. I picked one of the Clang-Format rules, <code>RemoveSemicolon</code>,
+and started tracing its flow in the Clang-Format libraries. Doing this was very essential because this helped me understand the different parts of a
+code formatter. Some of the most important ones are -</p>
+<ul>
+    <li><md-block>TokenAnnotator - the component that maintains a track for different *flags* for a token. eg: an *Optional* flag set for a 
+    token would indicate that token is not necessary in the final output</md-block></li>
+    <li><md-block>UnwrappedLineParser - the logic that takes care of unwrapping a line in code that can possibly span 
+    multiple lines (since the language is whitespace insensitive)</md-block></li>
+    <li><md-block>WhitespaceManager - the component that takes care of tracking the whitespaces required in the formatted code</md-block></li>
+    <li><md-block>TokenAnalyzer - the logic that does the actual formatting after analyzing the different flags set for a token</md-block></li>
+</ul>
+<h3 id="--brainstorming-the-formatter-design---should-we-reinvent-the-wheel">- Brainstorming the formatter design - <em>should we reinvent the wheel?</em></h3>
+<p>This was probably the most crucial step of this project. There were 3 options that were explored -</p>
+<ol>
+    <li><md-block>Building everything from scratch - The idea here was to a slight radical approach to build our own parse tree. This would make the
+    TableGen free of any dependency over Clang-Format while giving more control on the implementation details.
+    <br />
+    <br />
+    *Pros - no dependency on Clang-format!*
+    <br />
+    <br />
+    *Cons - this would require a lot (read: a LOT LOT LOT LOT) more work*</md-block></li>
+    <li><md-block>TableGen Formatter as a wrapper over Clang-Format - The idea here was to pull the necessary Clang-Format libraries out of Clang and
+    make them LLVM-wide available. Then, write a wrapper over these libraries to format TableGen.
+    <br />
+    <br />
+    *Pros - there's little dependency on Clang-Format while allowing control over implementation by writing a wrapper*
+    <br />
+    <br />
+    *Cons - this was too big a change, and it was very difficult to pull any Clang-Format libraries out of Clang.*</md-block></li>
+    <li><md-block>Add Support for TableGen in Clang-Format - Clang-Format supports formatting for several languages (C/C++/Java/JavaScript/JSON/
+    Objective-C/Protobuf/C#).
+    Adding TableGen support to it would require minimal changes among all the 3 options.
+    <br />
+    <br />
+    *Pros - more realistic approach to achieve required results + reusing the Clang-Format Style options, making it easier to use*
+    <br />
+    <br />
+    *Cons - there's a lot of dependency on Clang-Format.*</md-block></li>
+</ol>
+Although approach #3 depended completely on Clang-Format, turns out this was the best approach and given the similarity in syntax between C++ and TableGen,
+this gave us an advantage by using this approach.
+<h3 id="--adding-support-for-tablegen-in-clang-format">- Adding Support for TableGen in Clang-Format</h3>
+<p>I started out by picking the most common Clang-Format Style options that are used and adding support for those options for TableGen.
+Soon enough, I realized this was not the best approach. Then I shifted the approach to focus on specific TableGen constructs first such as loops,
+conditional statements, and others and ensured that Clang-Format was able to identify these. Once I was able to make Clang-Format recognize them, I
+found out that Clang-Format was able to handle a lot of basic formatting.</p>
+<h3 id="--current-and-future-scope">- Current and Future Scope</h3>
+<p>We have covered the following in the current scope -</p>
+<ul>
+    <li><md-block>Recognizing keywords such as *def*, *defvar*, *multiclass*, *let*</md-block></li>
+    <li><md-block>Merging/Treating TableGen DAG operands as single tokens</md-block></li>
+    <li><md-block>Recognizing and treating TableGen bang operators such as *!and*, *!if*, etc as single tokens</md-block></li>
+    <li><md-block>Support for macros</md-block></li>
+    <li><md-block>Support for *#* as a concatenation operator</md-block></li>
+    <li><md-block>Support for specific Clang-Format options such as *SeparateDefinitionBlocks*, *InsertBraces*, *RemoveBracesLLVM*</md-block></li>
+</ul>
+<p>In the future, the current strategy can be used to add support for the remaining relevant Clang-Format Style options for TableGen.</p>
+<h2 id="tablegen-formatter-in-action">TableGen Formatter in Action</h2>
+<figure>
+    <img 
+    src="/images/projects/tablegen-formatter/tablegen-formatter.gif"
+    width="900"
+    height="500"
+    alt="TableGen Formatter in Action"
+    >
+  <figcaption>Clang-Format recognizing and formatting a TableGen (.td) file</figcaption>
+</figure>
+<h1 id="what-i-learned">What I learned</h1>
+<p>The key takeaways for me from this project are -</p>
+<ul>
+    <li>Working with a large codebase - LLVM is one of the largest codebases that is being maintained by the open source 
+    community. Working on such a large code repository has its own challenges.</li>
+    <li>Importance of testing - It automatically became clear to me how important tests are while working with such a 
+    large codebase. Every single change needs to be accounted for in terms of tests because you never know what change might
+    break an existing functionality.</li>
+    <li>(Potentially) Contributing to the open source communities - Working on this project made me appreciate the 
+    open source communities even more and I hope to contribute to other open source communities too!</li>
+    <li>Perseverance is the key to success - When trying to modify existing code, it is very important to have the 
+    patience to understand what the code does and what are the repercussions of adding/removing lines of code. 
+    With the choice of adding support for TableGen within Clang-Format, it was very long until we saw the results and 
+    the only way to achieve what we achieved was persevering through it.</li>    
+</ul>
 
                 </p>
             </div><span class="navFull">
