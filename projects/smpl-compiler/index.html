@@ -134,12 +134,14 @@ control flow graph (CFG) of the program.
 In this step, I simply walk the IR generated and transpile it into DOT language and use <code>graphviz</code> to visualize the
 CFG.</p>
 <figure>
-    <img 
-    src="/images/projects/smpl-compiler/smpl-ir-viz.png"
-    alt="IR Visualization of a sample program"
-    width="700"
-    height="450"
-    >
+    <a href="/images/projects/smpl-compiler/smpl-ir-viz.png" target="_blank">
+        <img 
+        src="/images/projects/smpl-compiler/smpl-ir-viz.png"
+        alt="IR Visualization of a sample program"
+        width="700"
+        height="450"
+        >
+    </a>
   <figcaption>Optimized IR visualization of a program  <i>(Instr for 10 - z is reused)</i></figcaption>
 </figure>
 <h3 id="--adding-array-operations">- Adding array operations</h3>
@@ -149,12 +151,14 @@ elimination to eliminate any redundant loads.
 One important point here is to include <em>kill</em> instructions every time a store is performed. This is important as it
 ensures that the correct value is used every time an array element is accessed.</p>
 <figure>
-    <img 
-    src="/images/projects/smpl-compiler/smpl-arr-viz.png"
-    alt="IR Visualization of program with arrays"
-    width="850"
-    height="525"
-    >
+    <a href="/images/projects/smpl-compiler/smpl-arr-viz.png" target="_blank">
+        <img 
+        src="/images/projects/smpl-compiler/smpl-arr-viz.png"
+        alt="IR Visualization of program with arrays"
+        width="850"
+        height="525"
+        >
+    </a>
   <figcaption>IR Visualization of array operations</figcaption>
 </figure>
 <p><em>Note: the <strong>kill</strong> instructions included here are just for debugging purpose</em></p>
@@ -170,12 +174,14 @@ There are a few assumptions that I make here -</p>
 <li>Variable names are unique, i.e. there are no conflicting names between global and local variables</li>
 </ul>
 <figure>
-    <img 
-    src="/images/projects/smpl-compiler/smpl-func-viz.png"
-    alt="IR Visualization of program with UDF"
-    width="1000"
-    height="600"
-    >
+    <a href="/images/projects/smpl-compiler/smpl-func-viz.png" target="_blank">
+        <img 
+        src="/images/projects/smpl-compiler/smpl-func-viz.png"
+        alt="IR Visualization of program with UDF"
+        width="1000"
+        height="600"
+        >
+    </a>
   <figcaption>IR Visualization of a UDF</figcaption>
 </figure>
 <h1 id="what-i-learned">What I learned</h1>

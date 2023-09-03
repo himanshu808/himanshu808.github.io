@@ -6,7 +6,7 @@
     <description>Recent content on Himanshu Shah</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Aug 2023 13:37:43 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Sep 2023 13:13:31 -0700</lastBuildDate><atom:link href="https://himanshu808.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cron-Ease</title>
       <link>https://himanshu808.github.io/projects/cron-ease/</link>
@@ -71,12 +71,21 @@
     </item>
     
     <item>
+      <title>Comparing Interfaces in Golang</title>
+      <link>https://himanshu808.github.io/til/golang-comparing-interfaces/</link>
+      <pubDate>Sat, 02 Sep 2023 13:13:31 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/til/golang-comparing-interfaces/</guid>
+      <description>how interfaces are compared in Golang</description>
+    </item>
+    
+    <item>
       <title>Codon: A high-performance Python Compiler</title>
       <link>https://himanshu808.github.io/til/codon-python/</link>
       <pubDate>Mon, 14 Aug 2023 13:37:43 -0700</pubDate>
       
       <guid>https://himanshu808.github.io/til/codon-python/</guid>
-      <description>What is Codon?</description>
+      <description>what Codon is</description>
     </item>
     
     <item>

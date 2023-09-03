@@ -139,12 +139,14 @@ Once I had inspected the DNS packets, the next step was parsing the DNS response
 With the help of this specification, I was able to parse the response packets.</li>
 </ol>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-resp-parse.png"
-    alt="Parsing DNS response packet"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-resp-parse.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-resp-parse.png"
+        alt="Parsing DNS response packet"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>Parsed DNS Response Packet</figcaption>
 </figure>
 <br />
@@ -165,12 +167,14 @@ query and response packets in addition to simply reading them.</li>
 So far, I was able to parse DNS response packets off of the disk. But to build a stub resolver,
 I implemented a UDP client to send query packets to and receive response packets from a recursive DNS resolver.</p>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-stub-A.png"
-    alt="DNS Stub resolver resolving a query of record type A"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-stub-A.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-stub-A.png"
+        alt="DNS Stub resolver resolving a query of record type A"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>DNS Stub Resolver</figcaption>
 </figure>
 <p>In the image <strong>&ldquo;1&rdquo;</strong> represents the record type A.</p>
@@ -178,12 +182,14 @@ I implemented a UDP client to send query packets to and receive response packets
 <p>Up to this point, the DNS stub resolver only supported records of type A. In this step, I added support for other major
 record types such as CNAME, NS, MX and AAAA</p>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-stub-AAAA.png"
-    alt="DNS Stub resolver resolving a query of record type AAAA"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-stub-AAAA.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-stub-AAAA.png"
+        alt="DNS Stub resolver resolving a query of record type AAAA"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>DNS Stub Resolver (Type: AAAA)</figcaption>
 </figure>
 <h3 id="--implementing-a-dns-proxy-server">- Implementing a DNS Proxy Server</h3>
@@ -193,39 +199,47 @@ to the client.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send a lookup query to the DNS Proxy Server listening on port 1053</span>
 </span></span><span style="display:flex;"><span>dig -p <span style="color:#ae81ff">1053</span> @127.0.0.1 +noedns google.com  <span style="color:#75715e"># lookup google.com&#39;s IP</span>
 </span></span></code></pre></div><figure>
-    <img 
-    src="/images/projects/dns-server/dns-proxy-1.png"
-    alt="DNS Proxy server 1"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-proxy-1.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-proxy-1.png"
+        alt="DNS Proxy server 1"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>Proxy server receiving query from client</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-proxy-2.png"
-    alt="DNS Proxy server 2"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-proxy-2.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-proxy-2.png"
+        alt="DNS Proxy server 2"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>Proxy server forwarding query to DNS resolver</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-proxy-3.png"
-    alt="DNS Stub resolver resolving a query of record type AAAA"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-proxy-3.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-proxy-3.png"
+        alt="DNS Stub resolver resolving a query of record type AAAA"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>Proxy server receiving response from DNS resolver and forwarding it to client</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-client.png"
-    alt="DNS Client"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-client.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-client.png"
+        alt="DNS Client"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>DNS client receives response from Proxy server</figcaption>
 </figure>
 <p>With this, my DNS proxy server is up and running and can respond to queries with different record types! 🥳 🎉</p>
@@ -238,84 +252,102 @@ I end up with the entire domain name that the query was searching for.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send a lookup query to the DNS Server listening on port 3053</span>
 </span></span><span style="display:flex;"><span>dig +noedns +norecurse @127.0.0.1 -p <span style="color:#ae81ff">3053</span> www.google.com  <span style="color:#75715e"># lookup www.google.com&#39;s IP</span>
 </span></span></code></pre></div><figure>
-    <img 
-    src="/images/projects/dns-server/dns-query.png"
-    alt="DNS Query"
-    width="650"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-query.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-query.png"
+        alt="DNS Query"
+        width="650"
+        height="450"
+        >
+    </a>
   <figcaption>Query for <i>www.google.com</i> received from the client</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-lookup-1.png"
-    alt="DNS Lookup 1"
-    width="700"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-lookup-1.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-lookup-1.png"
+        alt="DNS Lookup 1"
+        width="700"
+        height="450"
+        >
+    </a>
   <figcaption>Performing the first lookup</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-resp-1.png"
-    alt="DNS Response 1"
-    width="700"
-    height="550"
-    >
+    <a href="/images/projects/dns-server/dns-resp-1.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-resp-1.png"
+        alt="DNS Response 1"
+        width="700"
+        height="550"
+        >
+    </a>
   <figcaption>Response received from the NS: 198.41.0.4</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-resp-2.png"
-    alt="DNS Response 2"
-    width="700"
-    height="550"
-    >
+    <a href="/images/projects/dns-server/dns-resp-2.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-resp-2.png"
+        alt="DNS Response 2"
+        width="700"
+        height="550"
+        >
+    </a>
   <figcaption>A random IP of an <i>A type</i> record is selected to perform the next lookup</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-lookup-2.png"
-    alt="DNS Lookup 2"
-    width="700"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-lookup-2.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-lookup-2.png"
+        alt="DNS Lookup 2"
+        width="700"
+        height="450"
+        >
+    </a>
   <figcaption>Performing the second lookup</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-resp-3.png"
-    alt="DNS Response 3"
-    width="700"
-    height="550"
-    >
+    <a href="/images/projects/dns-server/dns-resp-3.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-resp-3.png"
+        alt="DNS Response 3"
+        width="700"
+        height="550"
+        >
+    </a>
   <figcaption>Response of the second lookup</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-lookup-3.png"
-    alt="DNS Lookup 3"
-    width="700"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-lookup-3.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-lookup-3.png"
+        alt="DNS Lookup 3"
+        width="700"
+        height="450"
+        >
+    </a>
   <figcaption>Performing the final lookup</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-resp-4.png"
-    alt="DNS Response 4"
-    width="700"
-    height="650"
-    >
+    <a href="/images/projects/dns-server/dns-resp-4.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-resp-4.png"
+        alt="DNS Response 4"
+        width="700"
+        height="650"
+        >
+    </a>
   <figcaption>IP of <i>www.google.com</i> found and returned to the client!</figcaption>
 </figure>
 <figure>
-    <img 
-    src="/images/projects/dns-server/dns-dig-resp.png"
-    alt="DNS Client Resp"
-    width="800"
-    height="450"
-    >
+    <a href="/images/projects/dns-server/dns-dig-resp.png" target="_blank">
+        <img 
+        src="/images/projects/dns-server/dns-dig-resp.png"
+        alt="DNS Client Resp"
+        width="800"
+        height="450"
+        >
+    </a>
   <figcaption>Client receives the response of the final lookup</figcaption>
 </figure>
 <h1 id="what-i-learned">What I learned</h1>
