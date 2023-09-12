@@ -71,6 +71,16 @@
     </item>
     
     <item>
+      <title>My Vinyl Collection</title>
+      <link>https://himanshu808.github.io/vinyl-collection/</link>
+      <pubDate>Mon, 11 Sep 2023 20:33:36 -0700</pubDate>
+      
+      <guid>https://himanshu808.github.io/vinyl-collection/</guid>
+      <description>Rock music has always held a special place in my heart, and recently, I&amp;rsquo;ve embarked on an exciting new adventure in the world of vinyl records. My collection is still in its infancy, boasting just three records, but each one holds a special place in my heart. These vinyl albums have quickly become the focal point of my music library, with their tactile beauty and captivating album artwork.
+While I&amp;rsquo;m currently without a record player, I see this as an opportunity to carefully research and select the perfect turntable to enhance my listening experience.</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://himanshu808.github.io/resume/</link>
       <pubDate>Mon, 11 Sep 2023 20:12:33 -0700</pubDate>
@@ -153,7 +163,7 @@ Goal To improve the overall user experience of Mastek&amp;rsquo;s internal help-
       <pubDate>Thu, 23 Feb 2023 20:07:38 -0800</pubDate>
       
       <guid>https://himanshu808.github.io/whoami/</guid>
-      <description>&lt;!DOCTYPE html&gt; Himanshu Shah CS grad @ UC Irvine Software Engineer Irvine, CA TL;DR Passionate software engineer with 2 years of industry experience Experience in Python, C++, Golang, web development, and front-end frameworks like Angular and Laravel Team player, a great communicator, and loves playing badminton and listening to rock music in his free time Hello there, I&#39;m Himanshu! (pronounced: he-MAAN-shoo) I am a passionate software engineer with 2 years of experience in the industry and am currently pursuing my Master of Computer Science degree from University of California Irvine (Zot!</description>
+      <description>&lt;!DOCTYPE html&gt; Himanshu Shah CS grad @ UC Irvine Software Engineer Irvine, CA TL;DR Passionate software engineer with 2 years of industry experience Experience in Python, Golang, C++, web development, and front-end frameworks like Angular and Laravel Team player, a great communicator, and loves playing badminton and listening to rock music in his free time Hello there, I&#39;m Himanshu! (pronounced: he-MAAN-shoo) I am a passionate software engineer with 2 years of experience in the industry and am currently pursuing my Master of Computer Science degree from University of California Irvine (Zot!</description>
     </item>
     
   </channel>
