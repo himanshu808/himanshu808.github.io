@@ -1,6 +1,8 @@
 body {
   background: #1B1D1E;
   white-space: inherit;
+  overflow-y: auto;
+  padding-bottom: 80px;
 }
 
 #myimage {
