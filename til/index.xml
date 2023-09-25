@@ -13,7 +13,7 @@
       <pubDate>Sat, 23 Sep 2023 19:51:04 -0700</pubDate>
       
       <guid>https://himanshu808.github.io/til/database-migrations-in-golang/</guid>
-      <description>how to manage database migrations in Golang</description>
+      <description>how to manage database migrations in Golang using Go-migrate</description>
     </item>
     
     <item>

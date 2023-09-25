@@ -80,9 +80,9 @@ gtag('config', 'G-W5R07KJL4R');
                 |
                 
                 
-                <i class="fa fa-clock-o time"> <tags-elem>0 minutes (about 0 words)</tags-elem></i>
+                <i class="fa fa-clock-o time"> <tags-elem>6 minutes (about 1140 words)</tags-elem></i>
                 |
-                <i class="fa fa-calendar-days exp-duration"> <tags-elem>Sept 23, 2023</tags-elem></i>
+                <i class="fa fa-calendar-days exp-duration"> <tags-elem>Sept 25, 2023</tags-elem></i>
             </div>
 
             <div class="single-content">
@@ -96,8 +96,321 @@ gtag('config', 'G-W5R07KJL4R');
         li:not(:last-child) {
             margin-bottom: 8px;
         }
+        table {
+            width: 60%;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        td {
+            text-align: left;
+        }
     </style>
 </head>
+<h2 id="introduction">Introduction</h2>
+<p>The first session I conducted after initiating the Brown Bag session for developers at <a href="../../experience/viant/">Viant</a>
+was <em>Database Migrations using Go-migrate</em>. In this presentation, I briefly described what database migrations are,
+what is Go-migrate, why should we use database migrations, and finally the problems that one could face while using them.
+And I&rsquo;ll be covering the same points in this post.</p>
+<h2 id="database-migrations">Database Migrations</h2>
+<h3 id="--what-are-database-migrations">- What are database migrations?</h3>
+<p>Database migrations or schema migrations refer to the <code>version-controlled</code>, <code>incremental</code> and <code>reversible changes</code> to
+a relational database schema. <sup><a href="https://en.wikipedia.org/wiki/Schema_migration">[1]</a></sup></p>
+<p>The 3 highlighted words are what makes database migrations useful -</p>
+<ol>
+<li>version-controlled: Each state in the database is given a version number and every time a migrations is applied
+(or rolled back), the database &ldquo;version&rdquo; is incremented (or decremented) accordingly</li>
+<li>incremental: Each migration is written in a way such that changes to the schema are incremental and if all migrations
+are applied from the beginning, the resultant state would be the current database state</li>
+<li>reversible changes: <em>ideally</em> all migrations are written in such a way that on applying it, the database version goes
+from <code>V</code> to <code>V+1</code> and on rolling back, the database rolls back to version <code>V</code></li>
+</ol>
+<h3 id="--advantages-vs-disadvantages">- Advantages vs. Disadvantages</h3>
+<table class="center">
+    <tr>
+        <th>Advantages</th>
+        <th>Disadvantages</th>
+    </tr>
+    <tr>
+        <td>1. Git but for database</td>
+        <td><md-block>[1. Late code check-in issues](#late-code-check-in-issues)</md-block></td>
+    </tr>
+    <tr>
+        <td>2. Organized, granular and <i>ideally</i> reversible changes</td>
+        <td>2. More dev work - writing rollback migrations + PRs migrations</td>
+    </tr>
+    <tr>
+        <td>3. More efficient than a monolithic file dump of schema changes; reduces deployment time</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>4. Transformations between versions are clearly defined</td>
+        <td></td>
+    </tr>
+</table>
+<h3 id="--what-is-go-migrate">- What is Go-migrate?</h3>
+<p>Go-migrate <sup><a href="https://github.com/golang-migrate/migrate">[2]</a></sup> is a lightweight schema migration tool that reads migrations from sources and applies them to the specified
+database.</p>
+<br />
+<p>Go-migrate&rsquo;s philosophy -</p>
+<blockquote>
+<h4 id="database-drivers-are-dumb-they-dont-assume-things-or-try-to-correct-user-input-when-in-doubt-fail"><em>Database drivers are dumb. They don&rsquo;t assume things or try to correct user input. When in doubt, fail.</em></h4>
+</blockquote>
+<p>Install Go-migrate -  <a href="https://github.com/golang-migrate/migrate/tree/master/cmd/migrate#installation">How to install Go-migrate?</a></p>
+<h3 id="--go-migrate-commands">- Go-migrate commands</h3>
+<p>I will explain all the Go-migrate using a sample schema for a music database.</p>
+<h4 id="1-create">1. Create</h4>
+<p>This command is used to create new migrations. Every <code>create</code> will generate 2 files - <em>up</em> and <em>down</em> migrations</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># timestamp-based</span>
+</span></span><span style="display:flex;"><span>migrate create -ext sql -dir &lt;path-to-migration-files&gt; -format &lt;timestamp-format&gt; &lt;migration-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sequence-based</span>
+</span></span><span style="display:flex;"><span>migrate create -ext sql -dir &lt;path-to-migration-files&gt; -seq &lt;migration-name&gt;
+</span></span></code></pre></div><figure>
+    <a href="/images/til/go-migrate/create-terminal.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/create-terminal.png"
+        alt="Executing the create command"
+        width="900"
+        height="200"
+        >
+    </a>
+  <figcaption>Executing the create command</figcaption>
+</figure>
+<figure>
+    <a href="/images/til/go-migrate/create-files.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/create-files.png"
+        alt="Create command result"
+        width="700"
+        height="250"
+        >
+    </a>
+  <figcaption>Create command result</figcaption>
+</figure>
+<figure>
+    <a href="/images/til/go-migrate/init-migrations.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/init-migrations.png"
+        alt="Up and down migrations to create initial tables"
+        width="900"
+        height="350"
+        >
+    </a>
+  <figcaption>Up and down migrations to create initial tables</figcaption>
+</figure>
+<h4 id="2-up">2. Up</h4>
+<p>This command is used to apply migrations. It can be used to apply <em>all</em> the unapplied migrations or it can be used to
+specify the number of migrations to apply after the current version.</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># apply all</span>
+</span></span><span style="display:flex;"><span>migrate -database <span style="color:#e6db74">&#34;&lt;DB DSN&gt;&#34;</span> -path &lt;path-to-migration-files&gt; up
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># apply N</span>
+</span></span><span style="display:flex;"><span>migrate -database <span style="color:#e6db74">&#34;&lt;DB DSN&gt;&#34;</span> -path &lt;path-to-migration-files&gt; up N
+</span></span></code></pre></div><figure>
+    <a href="/images/til/go-migrate/init-tables.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/init-tables.png"
+        alt="Running the up command for the first time"
+        width="400"
+        height="300"
+        >
+    </a>
+  <figcaption>Running the up command for the first time</figcaption>
+</figure>
+<p>The first time this command is run, Go-migrate creates a <code>schema_migrations</code> table in the database against which this
+command is executed. This table is used by Go-migrate to keep track of the database version. The <em>dirty</em> column is used
+to represent whether that migration was successfully applied or not. If the value is 0, the schema was migrated to
+the version was successfully; 1 otherwise.</p>
+<figure>
+    <a href="/images/til/go-migrate/schema-migrations-1.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/schema-migrations-1.png"
+        alt="schema_migrations table after applying the first migration"
+        width="400"
+        height="150"
+        >
+    </a>
+  <figcaption>schema_migrations table after applying the first migration</figcaption>
+</figure>
+<h4 id="3-down">3. Down</h4>
+<p>This command is used to rollback the schema changes. It executes the queries in the <em>down</em> migration files.
+Just like the <em>up</em> command, this can be used to rollback all the migrations or can be used to specify a number of
+migrations to be rolled back from the current version.</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># rollback all</span>
+</span></span><span style="display:flex;"><span>migrate -database <span style="color:#e6db74">&#34;&lt;DB DSN&gt;&#34;</span> -path &lt;path-to-migration-files&gt; down -all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># rollback N</span>
+</span></span><span style="display:flex;"><span>migrate -database <span style="color:#e6db74">&#34;&lt;DB DSN&gt;&#34;</span> -path &lt;path-to-migration-files&gt; down N
+</span></span></code></pre></div><br />
+<p>Given the current state of the database, if a <em>down</em> migration is executed, all the tables will be dropped. The only
+table that would then remain is the <em>schema_migrations</em> table.</p>
+<figure>
+    <a href="/images/til/go-migrate/down-migration.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/down-migration.png"
+        alt="Database state after running the down command"
+        width="350"
+        height="150"
+        >
+    </a>
+  <figcaption>Database state after running the down command</figcaption>
+</figure>
+<h4 id="4-goto">4. Goto</h4>
+<p>This command is used to go to a specific version of the database. If the current version is lesser than the specified
+version, the migrations in between are applied. If the current version is greater, the migrations in between are rolled
+back.</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>migrate -database <span style="color:#e6db74">&#34;&lt;DB DSN&gt; -path &lt;path-to-migration-files&gt; goto V&#34;</span>
+</span></span></code></pre></div><br />
+<p>After adding more migrations,</p>
+<figure>
+    <a href="/images/til/go-migrate/rem-migrations.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/rem-migrations.png"
+        alt="Creating more migrations"
+        width="450"
+        height="250"
+        >
+    </a>
+  <figcaption>Creating more migrations</figcaption>
+</figure>
+<p>say the current version is 1, and the <em>goto</em> command is used with V=3.</p>
+<figure>
+    <a href="/images/til/go-migrate/goto-result.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/goto-result.png"
+        alt="Goto command execution result"
+        width="380"
+        height="280"
+        >
+    </a>
+  <figcaption>Goto command execution result</figcaption>
+</figure>
+<figure>
+    <a href="/images/til/go-migrate/schema-migrations-2.png" target="_blank">
+        <img 
+        src="/images/til/go-migrate/schema-migrations-2.png"
+        alt="schema_migrations after goto command"
+        width="400"
+        height="200"
+        >
+    </a>
+  <figcaption>schema_migrations after goto command</figcaption>
+</figure>
+<h4 id="5-force">5. Force</h4>
+<p>This command is used to force the schema_migrations to point to a specific version <em>without</em> actually applying it.
+The <em>force</em> command is normally used when a migration fails and the <em>dirty</em> column in the <em>schema_migrations</em> table
+is 1. When a migration fails, the user needs to inspect the failure and fix it manually, run the <em>force</em> command to force
+the schema_migration to that version, and then proceed with running the remaining migrations.</p>
+<br />
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>migrate -database <span style="color:#e6db74">&#34;&lt;DB DSN&gt;&#34;</span> -pah &lt;path-to-migration-files&gt; force V
+</span></span></code></pre></div><h3 id="--points-to-note">- Points to Note</h3>
+<ol>
+<li>For a &ldquo;no-op&rdquo; <em>migrate down</em>, there should at least be a comment in the file. Leaving the file completely empty
+will result in an error</li>
+<li>DB DSN format: <code>&lt;db-driver&gt;://&lt;username&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;db-name&gt;</code></li>
+</ol>
+<h3 id="--best-practices">- Best Practices</h3>
+<ol>
+<li>Multiple queries should be executed in a transaction</li>
+<li>Try to make the migrations idempotent i.e. running the same migration twice in a row should give the same result.
+eg. adding <code>IF EXISTS</code> to DROP and <code>IF NOT EXISTS</code> to CREATE statements</li>
+<li>Before committing the migration to a remote repo, ensure the migrations run properly. Normally, do an <em>up</em>, <em>down</em>,
+and then an <em>up</em> again.</li>
+</ol>
+<h2 id="late-code-check-in-issues">Late code check-in issues</h2>
+<p><md-block>### - Scenario #1 - The timestamp migration order problem <sup><a href="https://github.com/pressly/goose/issues/63#issuecomment-428681694">[3]</a></sup></md-block></p>
+<ol>
+<li>Joe&rsquo;s branch -</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>migrations/2018-09-15-12:00:00_joe_1.sql
+</span></span><span style="display:flex;"><span>migrations/2018-10-10-12:00:00_joe_2.sql
+</span></span></code></pre></div><ol start="2">
+<li>Alice&rsquo;s branch -</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>migrations/2018-10-01-12:00:00_alice_1.sql
+</span></span><span style="display:flex;"><span>migrations/2018-10-18-12:00:00_alice_2.sql
+</span></span></code></pre></div><ol start="3">
+<li>Joe&rsquo;s changes get merged to master</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span># master
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+migrations/2018-09-15-12:00:00_joe_1.sql
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+migrations/2018-10-10-12:00:00_joe_2.sql
+</span></span></span></code></pre></div><ol start="4">
+<li>
+<p>Joe&rsquo;s changes are released. The prod DB version now points to <code>2018-10-10-12:00:00</code></p>
+</li>
+<li>
+<p>Alice&rsquo;s changes are merged to master later</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span># master
+</span></span><span style="display:flex;"><span>migrations/2018-09-15-12:00:00_joe_1.sql
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+migrations/2018-10-01-12:00:00_alice_1.sql
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>migrations/2018-10-10-12:00:00_joe_2.sql
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+migrations/2018-10-18-12:00:00_alice_2.sql
+</span></span></span></code></pre></div><ol start="6">
+<li>Since the <code>alice_1.sql</code> migration is behind the prod DB version, one of migrations is never applied.</li>
+</ol>
+<h4 id="possible-workarounds--">Possible workarounds -</h4>
+<ol>
+<li>Use sequence numbers instead of timestamps - Go-migrate does not run any migrations if there are duplicate sequence
+numbers in the same folder.</li>
+<li><a href="https://github.com/golang-migrate/migrate/issues/179#issuecomment-947094417">https://github.com/golang-migrate/migrate/issues/179#issuecomment-947094417</a></li>
+</ol>
+<h3 id="--scenario-2---order-dependent-migrations">- Scenario #2 - Order dependent migrations</h3>
+<p>Say, Alice and Bob are working on separate tasks each involving DB changes that are sequence/order dependent.
+Eg. Alice&rsquo;s ALTER followed by Bob&rsquo;s INSERT on the same table.</p>
+<p>Possible scenarios -</p>
+<ul>
+<li>Bob does NOT know about Alice&rsquo;s changes
+<ul>
+<li>Bob&rsquo;s changes go first
+<ul>
+<li>Bob&rsquo;s migrations run correctly</li>
+<li>Alice&rsquo;s migrations <em>may or may not fail</em></li>
+</ul>
+</li>
+<li>Alice&rsquo;s changes go first
+<ul>
+<li>Alice&rsquo;s migrations run correctly</li>
+<li>Bob&rsquo;s migrations <em>may or may not fail</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bob knows about Alice&rsquo;s changes
+<ul>
+<li>Bob&rsquo;s changes go first
+<ul>
+<li>Bob&rsquo;s migrations most likely fail</li>
+<li>Alice&rsquo;s migrations run correctly</li>
+</ul>
+</li>
+<li>Alice&rsquo;s changes go first
+<ul>
+<li>Everything works correctly</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>3 out 4 of the times, there could be a partial or a complete failure while applying migrations.</p>
+<h4 id="possible-workarounds---1">Possible workarounds -</h4>
+<ol>
+<li>Have an intermediate &ldquo;stage&rdquo; branch to order the migrations correctly before merging to master</li>
+<li>Use one migration file per release</li>
+</ol>
+<h2 id="references">References</h2>
+<p>[1] <a href="https://en.wikipedia.org/wiki/Schema_migration">https://en.wikipedia.org/wiki/Schema_migration</a></p>
+<p>[2] <a href="https://github.com/golang-migrate/migrate">https://github.com/golang-migrate/migrate</a></p>
+<p>[3] <a href="https://github.com/pressly/goose/issues/63#issuecomment-428681694">https://github.com/pressly/goose/issues/63#issuecomment-428681694</a></p>
+<p>[4] <a href="https://www.prisma.io/dataguide/types/relational/what-are-database-migrations">https://www.prisma.io/dataguide/types/relational/what-are-database-migrations</a></p>
 
                 </p>
             </div><span class="navFull">
