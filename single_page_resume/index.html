@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html><head>
-    <title>Viant Technology - Full Stack Intern</title>
+<html lang="en-us"><head>
+    <title></title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5R07KJL4R"></script>
     <script>
@@ -63,82 +63,73 @@ gtag('config', 'G-W5R07KJL4R');
 
 
 </head>
-<head>
-        <link rel="stylesheet" href="/experience/experience-single.css">
-    </head>
-    <body>
-        <div style="position:relative; width: 100%;">
-            <span style="text-align: center; color: #BBBBBB;">
-                <h1>
-                    Viant Technology
-                </h1>
-            </span>
-            <div class="exp-tags">
-                
-                <b>tags: </b>
-                
-                        <a href="/tags/golang"><i class="fa fa-tag indi-tag"> <tags-elem>Golang</tags-elem></i></a>
-                    
-                        <a href="/tags/angular"><i class="fa fa-tag indi-tag"> <tags-elem>Angular</tags-elem></i></a>
-                    
-                        <a href="/tags/typescript"><i class="fa fa-tag indi-tag"> <tags-elem>TypeScript</tags-elem></i></a>
-                    
-                        <a href="/tags/aws"><i class="fa fa-tag indi-tag"> <tags-elem>AWS</tags-elem></i></a>
-                    
-                        <a href="/tags/microservices"><i class="fa fa-tag indi-tag"> <tags-elem>Microservices</tags-elem></i></a>
-                    
-                        <a href="/tags/sql"><i class="fa fa-tag indi-tag"> <tags-elem>SQL</tags-elem></i></a>
-                    
-                        <a href="/tags/full-stack"><i class="fa fa-tag indi-tag"> <tags-elem>Full Stack</tags-elem></i></a>
-                    
-                        <a href="/tags/codon"><i class="fa fa-tag indi-tag"> <tags-elem>Codon</tags-elem></i></a>
-                    
-                
-            </div>
-            <div class="single-content">
-                <h3>
-                    Position: Full Stack Intern
-                    <br />
-                    <br />
-                    <i class="fa fa-calendar-days exp-duration"> <tags-elem>Jun 2023 - Dec 2023</tags-elem></i>
-                    <br />
-                    <br />
-                    Tech Stack: Golang, Angular, TypeScript, MySQL, AWS (Lambda, DynamoDB, SNS, S3, EventBridge, MediaConvert)
-                </h3>
-                <p>
-                    <head>
-    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
-    <style>
-        p {
-            margin: 0px;
-        }
-        li:not(:last-child) {
-            margin-bottom: 8px;
-        }
-    </style>
-</head>
-<h2 id="responsibilitiesaccomplishments">Responsibilities/Accomplishments</h2>
-<p>As a Full Stack Intern in the Platform team I -</p>
-<ul>
-    <li><md-block>Developed a feature for extracting audio from videos using `AWS MediaConvert`, `SNS`, `DynamoDB`, and 
-    `EventBridge`, increasing the bid eligibility for clients’ ad campaigns and thereby achieving a lift of `15%` in the 
-    generated revenue (projected)</md-block></li>
-    <li><md-block>Saved `8+` engineer hours (per use) by automating the process of adding new third-party segments using 
-    `Angular`, `Golang`, `AWS Lambda`, `APIGateway`, and `S3`</md-block></li>
-    <li><md-block>Evaluated `go-migrate` as a schema migration tool to improve efficiency and reduce deployment time</md-block></li>
-    <li><md-block>Contributed to the architecture for the Video-to-Audio Conversion project</md-block></li>
-    <li><md-block>Leveraged Go Generics to make it easier to add/fetch objects from `DynamoDB`</md-block></li>
-</ul>
-<h2 id="highlights-outside-the-realm-of-my-role">Highlights outside the realm of my role</h2>
-<ul>
-    <li><md-block>Improved performance of existing Python scripts by `30x` on average using Codon, 
-    reducing costs by at least `15x`</md-block></li>
-    <li><md-block>Initiated the monthly Brown Bag sessions for developers; conducted the first session on
-    <a href="/til/database-migrations-in-golang/">database migrations using Go-migrate</a></md-block></li>
-</ul>
+<body>
+        <div id="content">
+    
+    
+    
 
-                </p>
-            </div><span class="navFull">
+
+    <span id="activity-title"></span> <br>
+ <span id="activity-content"></span> <br>
+
+<script type="text/javascript">
+    async function typewriter(text, elementId, waitAfter) {
+        var n = 0,
+            isTag = false
+        addText = "";
+        const el = document.getElementById(elementId);
+
+        const wait = () => new Promise(r => setTimeout(r, waitAfter));
+        const nowait = () => new Promise(r => r());
+
+        const render = () => el.innerHTML = (text.slice(0, n + 1) + addText);
+
+        const cursor = document.createElement('span');
+        cursor.id = "blink";
+
+        el.style.setProperty("--cursor-visibility", "visible");
+        while (n < text.length) {
+            if (text.charAt(n + 1) === "<") isTag = true;
+            if (text.charAt(n + 1) === ">") isTag = false;
+
+            if (isTag) {
+                n++;
+                continue;
+            }
+
+            requestAnimationFrame(render);
+
+            if (waitAfter === 0) {
+                await nowait();
+            } else {
+                await wait();
+            }
+
+            n++;
+        }
+        el.style.setProperty("--cursor-visibility", "collapse");
+    }
+
+    function parseDelay(d) {
+        const parsed = parseInt(d, 10);
+        if (isNaN(parsed)) return 0;
+        return parsed;
+    }
+
+    const titleDelay = parseDelay("0"),
+        contentDelay = parseDelay("0");
+    const typeeffetct = async () => {
+        await typewriter("\u003cspan id=\u0027terminal\u0027\u003e\u003cspan style=\u0027text-align: center; color: #BBBBBB;\u0027\u003e\u003ch1 id=\u0027title\u0027\u003e\u003c\/h1\u003e\u003c\/span\u003e\u003c\/span\u003e", "activity-title", titleDelay);
+        await typewriter("\u003cspan id=\u0027terminal\u0027\u003e\u003c!DOCTYPE html\u003e\n\u003chtml\u003e\n\u003chead\u003e\n  \u003ctitle\u003eResume\u003c\/title\u003e\n  \u003clink rel=\u0022canonical\u0022 href=\u0022\/himanshu_shah_resume.pdf \/\u003e\n  \u003cmeta name=\u0022robots\u0022 content=\u0022noindex\u0022\u003e\n  \u003cmeta charset=\u0022utf-8\u0022 \/\u003e\n  \u003cmeta http-equiv=\u0022refresh\u0022 content=\u00220; url=\/himanshu_shah_resume.pdf\u0022 \/\u003e\n\u003c\/head\u003e\n\u003c\/html\u003e\n\u003c\/span\u003e", "activity-content", contentDelay);
+        return;
+    }
+
+    typeeffetct()
+</script>
+
+        </div>
+        <span class="navFull">
     
 
 
@@ -150,7 +141,7 @@ gtag('config', 'G-W5R07KJL4R');
 <span>
     <a href="/">Home</a>
     <span>&#8192;|&#8192;</span>
-    <a href="./..">/experience/</a>
+    <a href="./..">/</a>
 </span>
 
 
@@ -171,6 +162,7 @@ gtag('config', 'G-W5R07KJL4R');
     </span>
 </span>
 
-        </div>
+        
+         
     </body>
 </html>
