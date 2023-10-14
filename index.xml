@@ -158,8 +158,8 @@ While I&amp;rsquo;m currently without a record player, I see this as an opportun
       <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
       
       <guid>https://himanshu808.github.io/experience/viant/</guid>
-      <description> Responsibilities/Accomplishments As a Full Stack Intern in the Platform team I -
-Developed a feature for extracting audio from videos using `AWS MediaConvert`, `SNS`, `DynamoDB`, and `EventBridge`, increasing the bid eligibility for clients’ ad campaigns and thereby achieving a lift of `15%` in the generated revenue (projected) Saved `8+` engineer hours (per use) by automating the process of adding new third-party segments using `Angular`, `Golang`, `AWS Lambda`, `APIGateway`, and `S3` Evaluated `go-migrate` as a schema migration tool to improve efficiency and reduce deployment time Contributed to the architecture for the Video-to-Audio Conversion project Leveraged Go Generics to make it easier to add/fetch objects from `DynamoDB` Highlights outside the realm of my role Improved performance of existing Python scripts by `30x` on average using Codon, reducing costs by at least `15x` Initiated the monthly Brown Bag sessions for developers; conducted the first session on database migrations using Go-migrate </description>
+      <description>Responsibilities/Accomplishments As a Full Stack Intern in the Platform team I -
+Developed a video-to-audio conversion microservice to enhance ad campaign performance using creatives in not only video but also audio ad placements, achieving an estimated `15%` lift in revenue. Used `AWS Lambda`, `MediaConvert`, `SNS`, and `DynamoDB`. Teamed up with another intern to automate the process of adding new third-party user segments using `Angular`, `Golang`, `AWS APIGateway`, and `S3`, saving `8+` engineer hours per use.</description>
     </item>
     
     <item>
@@ -169,7 +169,7 @@ Developed a feature for extracting audio from videos using `AWS MediaConvert`, `
       
       <guid>https://himanshu808.github.io/experience/va-2/</guid>
       <description>Responsibilities/Accomplishments After 1.5 years at Visible Alpha, I was promoted to the Software Engineer 2 position. My accomplishments during this time were -
-Engineered the framework for adding Snowflake as a data delivery channel using `Falcon`, `Python`, `Snowflake`, `MySQL`, and `AWS S3`, increasing the generated revenue by 45% and reducing the Time To Value Built APIs to reduce the average tech-support turnaround time by 80% from 10 to 2 minutes Revamped the file dispatcher microservice to reduce the number of open SSH connections by 5X using `Paramiko` Implemented a dashboard to report daily file generation and dispatch metrics to aid the Support Team in monitoring failures Performed Snowflake database replication over different regions and clouds (AWS, GCP, Azure) Documented projects using the `Sphinx` documentation generator to improve code maintainability and productivity for new developers Assisted the Infrastructure team with deployment issues I am happy to connect to talk about my work, so reach out to know more!</description>
+Added Snowflake as a data delivery channel using `Falcon` and `MySQL`, increasing revenue by `45%` and reducing the customer’s Time to Value. Revamped the file dispatcher service to reduce the number of open SSH connections by `5x`, increasing product scalability. Built APIs to reduce the average Tech-Support turnaround time by `80%` from `10` to `2` minutes.</description>
     </item>
     
     <item>
@@ -179,7 +179,7 @@ Engineered the framework for adding Snowflake as a data delivery channel using `
       
       <guid>https://himanshu808.github.io/experience/va-1/</guid>
       <description>Responsibilities/Accomplishments As a Software Engineer in the Data feed and APIs team, I -
-Migrated the existing monolithic ETL application to a microservice-based implementation, delivering high-volume, real-time data to clients with low latency, using `Django`, `MongoDB`, and `Redis`, driving $2 million in revenue Optimized file dispatch latency by 80% using `RabbitMQ` &amp; `Celery` for asynchronous task execution (60 to 10 seconds) Designed `REST APIs` and added APIs and `AWS S3` as data delivery channels to ease data consumption for clients Augmented error logging by leveraging the latest features of `Sentry` and by implementing a global logger, saving 25% of the team’s time spent on debugging and bug fixes Solved complex performance problems by resolving production issues, gaining exposure to dealing with large-scale software design issues, and avoiding performance bottlenecks Worked on projects through different phases of the software development life cycle including writing unit and automation tests and deploying projects on servers using `Docker` and `Jenkins` Wrote unit tests using the `Pytest` framework and increased unit test code coverage from 11% to 77% Carried out load and performance testing of the APIs using `Apache JMeter` to estimate API scalability and identify system lag Improved the Software Engineering process of the team by setting up a dev environment using `Docker` and `Jenkins` for dev testing Assisted the Database Administrator by writing backward-compatible queries for MySQL version migration from MySQL 5.</description>
+Migrated the existing monolithic ETL application to microservices, delivering high-volume, real-time data with low latency to clients, using `Django`, `MongoDB`, and `Redis`, driving `$2 million` in revenue. Reduced the ETL app file dispatch latency by `~80%` using `RabbitMQ` and `Celery` for async task execution (60 to 10 seconds). Added `REST APIs` and `AWS S3` as data delivery channels to ease data consumption for customers.</description>
     </item>
     
     <item>

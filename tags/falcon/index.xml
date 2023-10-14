@@ -14,7 +14,7 @@
       
       <guid>https://himanshu808.github.io/experience/va-2/</guid>
       <description>Responsibilities/Accomplishments After 1.5 years at Visible Alpha, I was promoted to the Software Engineer 2 position. My accomplishments during this time were -
-Engineered the framework for adding Snowflake as a data delivery channel using `Falcon`, `Python`, `Snowflake`, `MySQL`, and `AWS S3`, increasing the generated revenue by 45% and reducing the Time To Value Built APIs to reduce the average tech-support turnaround time by 80% from 10 to 2 minutes Revamped the file dispatcher microservice to reduce the number of open SSH connections by 5X using `Paramiko` Implemented a dashboard to report daily file generation and dispatch metrics to aid the Support Team in monitoring failures Performed Snowflake database replication over different regions and clouds (AWS, GCP, Azure) Documented projects using the `Sphinx` documentation generator to improve code maintainability and productivity for new developers Assisted the Infrastructure team with deployment issues I am happy to connect to talk about my work, so reach out to know more!</description>
+Added Snowflake as a data delivery channel using `Falcon` and `MySQL`, increasing revenue by `45%` and reducing the customer’s Time to Value. Revamped the file dispatcher service to reduce the number of open SSH connections by `5x`, increasing product scalability. Built APIs to reduce the average Tech-Support turnaround time by `80%` from `10` to `2` minutes.</description>
     </item>
     
   </channel>

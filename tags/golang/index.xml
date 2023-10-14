@@ -31,8 +31,8 @@
       <pubDate>Tue, 01 Aug 2023 09:33:39 -0700</pubDate>
       
       <guid>https://himanshu808.github.io/experience/viant/</guid>
-      <description> Responsibilities/Accomplishments As a Full Stack Intern in the Platform team I -
-Developed a feature for extracting audio from videos using `AWS MediaConvert`, `SNS`, `DynamoDB`, and `EventBridge`, increasing the bid eligibility for clients’ ad campaigns and thereby achieving a lift of `15%` in the generated revenue (projected) Saved `8+` engineer hours (per use) by automating the process of adding new third-party segments using `Angular`, `Golang`, `AWS Lambda`, `APIGateway`, and `S3` Evaluated `go-migrate` as a schema migration tool to improve efficiency and reduce deployment time Contributed to the architecture for the Video-to-Audio Conversion project Leveraged Go Generics to make it easier to add/fetch objects from `DynamoDB` Highlights outside the realm of my role Improved performance of existing Python scripts by `30x` on average using Codon, reducing costs by at least `15x` Initiated the monthly Brown Bag sessions for developers; conducted the first session on database migrations using Go-migrate </description>
+      <description>Responsibilities/Accomplishments As a Full Stack Intern in the Platform team I -
+Developed a video-to-audio conversion microservice to enhance ad campaign performance using creatives in not only video but also audio ad placements, achieving an estimated `15%` lift in revenue. Used `AWS Lambda`, `MediaConvert`, `SNS`, and `DynamoDB`. Teamed up with another intern to automate the process of adding new third-party user segments using `Angular`, `Golang`, `AWS APIGateway`, and `S3`, saving `8+` engineer hours per use.</description>
     </item>
     
   </channel>
