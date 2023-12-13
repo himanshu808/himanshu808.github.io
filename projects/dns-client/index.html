@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html><head>
+    <title>DNS Client</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5R07KJL4R"></script>
+    <script>
+        const host = window.location.hostname;
+        if(host !== "localhost")
+        {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+gtag('config', 'G-W5R07KJL4R');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Himanshu">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="icon" type="image/x-icon" href="/images/myicon.png">
+    <script src="https://kit.fontawesome.com/204973324d.js" crossorigin="anonymous"></script>
+    <style>
+
+    @import "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap";:root{--cursor-visibility:hidden}html,body{width:100%;height:100%;overflow:auto;font-family:courier new,monospace;font-size:4vmin;line-height:4.1vmin;font-weight:400}body{margin:0;display:flex;flex-direction:row;justify-content:center;align-items:center}#content{min-width:82vmin;min-height:82vmin}.cursor,#activity-title:after,#activity-content:after,#cd:after,#whoami:after,#cat:after,#tree:after{visibility:var(--cursor-visibility);content:"|";overflow:hidden;color:#fff;animation:blink 500ms linear infinite alternate}@keyframes blink{0%{opacity:0}100%{opacity:1}}@media only screen and (min-width:768px){body{font-size:2.5vmin;line-height:2.6vmin}#content{min-width:60vmin}}tags-elem{font-family:courier new,monospace}pre{border:1px solid #cacaca;line-height:1.2em;padding:10px;overflow:auto;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;background-color:#fafafb;color:#393939;margin:0}:not(pre)>code{font:inherit;color:#000;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #aaa;background-color:#adadad;padding:0 1px;display:inline-block;margin:0}figure{text-align:center}figcaption{font-size:15px}table,th,td{border:1px groove #fff;border-collapse:collapse}th,td{text-align:center;padding:1px}table{table-layout:fixed;width:100%}:root{--cursor-visibility:hidden}body{align-items:unset;overflow-y:scroll}#content{max-width:80vmin}pre{overflow-x:scroll;white-space:pre}@keyframes blink{0%{opacity:0}100%{opacity:1}}
+    
+    
+    body{background:#1B1D1E; color: #BBBBBB}body #terminal{color:#BBBBBB}body #user{color:#5FE0B1}body #dir{color:#6DF2FF}body .Typewriter__cursor{color:#BBBBBB}a{color:#BBBBBB}
+
+        
+    .navFull {
+        background-color: #353535;
+        font-family: "Courier New";
+        font-size: 17px;
+        display: inline;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        padding-top: 5px;
+        padding: 10px;
+        padding-bottom: 0px;
+    }
+
+    .navCredits {
+        float: right;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+
+    #content::after {
+        content: "\a\a";
+        white-space: pre;
+    }
+        
+        
+</style>
+
+
+
+
+</head>
+<head>
+        <link rel="stylesheet" href="/projects/project-single.css">
+    </head>
+    <body>
+        <div style="position:relative; width: 100%;">
+            <span style="text-align: center; color: #BBBBBB;">
+                <h1>
+                    DNS Client
+                    
+                        <a href="https://github.com/himanshu808/dns-protocol" target="_blank"><i class="fa fa-link" style="font-size: 20px;"></i></a>
+                    
+                </h1>
+            </span>
+
+            <div class="pro-tags">
+                
+                <b>tags: </b>
+                
+                        <a href="/tags/c&#43;&#43;"><i class="fa fa-tag indi-tag"> <tags-elem>C&#43;&#43;</tags-elem></i></a>
+                    
+                        <a href="/tags/computer-network"><i class="fa fa-tag indi-tag"> <tags-elem>Computer Network</tags-elem></i></a>
+                    
+                        <a href="/tags/socket-programming"><i class="fa fa-tag indi-tag"> <tags-elem>Socket programming</tags-elem></i></a>
+                    
+                
+            </div>
+
+            <div class="single-content">
+                <p>
+                    <h2 id="about">About</h2>
+<p>The Domain Name System is a hierarchical and distributed naming system for computers, services, and other resources
+in the Internet or other Internet Protocol networks. It associates various information with domain names assigned to
+each of the associated entities.</p>
+<p>Paul Mockapetris, a UCI alumnus, is the inventor of the Domain Name System (DNS) and his creation of DNS is one of the
+reasons that we have been able to scale the Internet to as we know it today!</p>
+<h2 id="aim">Aim</h2>
+<p>Computer Networks is not really one of my greatest strengths, and what could be better (and cooler) than getting my
+hands dirty and implementing my own DNS server!</p>
+<p>This project is a basic implementation of a DNS server with the goal of understanding <em>how DNS works</em>,
+<em>what do the DNS question and response packets look like</em>, and playing around with the <em>dig</em> and <em>nc</em> commands.</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="--understanding-the-dns-protocol">- Understanding the DNS protocol</h3>
+<ol>
+<li>
+<p>Understanding the DNS packets
+<br />
+<br />
+To achieve this, I went through the <a href="https://www.rfc-editor.org/rfc/rfc1035">DNS RFC</a> <em>(Pg 25)</em> to understand the
+message sections and their respective formats</p>
+</li>
+<li>
+<p>Inspecting DNS packets
+<br />
+<br />
+To understand the DNS packets in practice, I used the <em>nc</em> command to listen to a port, and the <em>dig</em> command with the
+<code>+noedns</code> flag to create a <em>query</em> packet</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># this records the query packet in query.txt</span>
+</span></span><span style="display:flex;"><span>nc -u -l <span style="color:#ae81ff">1053</span> &gt; query.txt
+</span></span><span style="display:flex;"><span>dig -p <span style="color:#ae81ff">1053</span> @127.0.0.1 +noedns google.com  <span style="color:#75715e"># lookup google.com&#39;s IP</span>
+</span></span></code></pre></div><p>Then, I used this query packet to record a response packet by sending the same query to Google&rsquo;s DNS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># this records the response packet in response.txt</span>
+</span></span><span style="display:flex;"><span>nc -u 8.8.8.8 <span style="color:#ae81ff">53</span> &lt; query.txt &gt; response.txt  <span style="color:#75715e"># 53 is the DNS port</span>
+</span></span></code></pre></div><p>To inspect the query and response packets, I used the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hexdump -C query.txt
+</span></span><span style="display:flex;"><span>hexdump -C response.txt
+</span></span></code></pre></div><ol start="3">
+<li>Parsing the response packet
+<br />
+<br />
+Once I had inspected the DNS packets, the next step was parsing the DNS response packet.
+<a href="https://www.rfc-editor.org/rfc/rfc1035">DNS RFC</a> <em>(Pg 26-29)</em> mention the Header, Question and Record formats.
+With the help of this specification, I was able to parse the response packets.</li>
+</ol>
+<figure>
+    <a href="/images/projects/dns-client/dns-resp-parse.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-resp-parse.png"
+        alt="Parsing DNS response packet"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>Parsed DNS Response Packet</figcaption>
+</figure>
+<br />
+<br />
+<h3 id="--building-a-dns-stub-resolver">- Building a DNS stub resolver</h3>
+<p>A DNS stub resolver serves as an intermediary between the application requiring DNS resolution,
+and a recursive DNS resolver.</p>
+<ol>
+<li>Forming Query and Response packets
+<br />
+<br />
+As I already knew the format of the different sections, I now added writing functionality to support formation of
+query and response packets in addition to simply reading them.</li>
+</ol>
+<p>2.Creating a UDP client
+<br />
+<br />
+So far, I was able to parse DNS response packets off of the disk. But to build a stub resolver,
+I implemented a UDP client to send query packets to and receive response packets from a recursive DNS resolver.</p>
+<figure>
+    <a href="/images/projects/dns-client/dns-stub-A.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-stub-A.png"
+        alt="DNS Stub resolver resolving a query of record type A"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>DNS Stub Resolver</figcaption>
+</figure>
+<p>In the image <strong>&ldquo;1&rdquo;</strong> represents the record type A.</p>
+<h3 id="--adding-support-for-other-record-types">- Adding Support for other Record Types</h3>
+<p>Up to this point, the DNS stub resolver only supported records of type A. In this step, I added support for other major
+record types such as CNAME, NS, MX and AAAA</p>
+<figure>
+    <a href="/images/projects/dns-client/dns-stub-AAAA.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-stub-AAAA.png"
+        alt="DNS Stub resolver resolving a query of record type AAAA"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>DNS Stub Resolver (Type: AAAA)</figcaption>
+</figure>
+<h3 id="--implementing-a-dns-proxy-server">- Implementing a DNS Proxy Server</h3>
+<p>To get one step closer to implementing a recursive DNS resolver, I first implemented a simple DNS proxy server.
+This server acts as a middleman and simply forwards the query to an actual DNS resolver and returns the response back
+to the client.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send a lookup query to the DNS Proxy Server listening on port 1053</span>
+</span></span><span style="display:flex;"><span>dig -p <span style="color:#ae81ff">1053</span> @127.0.0.1 +noedns google.com  <span style="color:#75715e"># lookup google.com&#39;s IP</span>
+</span></span></code></pre></div><figure>
+    <a href="/images/projects/dns-client/dns-proxy-1.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-proxy-1.png"
+        alt="DNS Proxy server 1"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>Proxy server receiving query from client</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-proxy-2.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-proxy-2.png"
+        alt="DNS Proxy server 2"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>Proxy server forwarding query to DNS resolver</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-proxy-3.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-proxy-3.png"
+        alt="DNS Stub resolver resolving a query of record type AAAA"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>Proxy server receiving response from DNS resolver and forwarding it to client</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-client.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-client.png"
+        alt="DNS Client"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>DNS client receives response from Proxy server</figcaption>
+</figure>
+<p>With this, my DNS proxy server is up and running and can respond to queries with different record types! 🥳 🎉</p>
+<h3 id="--implementing-the-dns-recursive-resolver">- Implementing the DNS recursive resolver</h3>
+<p>This is the final step of this project where I go about implementing a recursive resolver. So far my server was simply
+a proxy server, dependent on another server to actually perform the lookup. In this step, I recursively resolve a domain
+starting right from the root servers, resolving the top-level domains first, i.e. when resolving <code>www.google.com</code>, the
+root servers give me the information about <code>com</code> and tell me where to look next. I perform this lookup recursively till
+I end up with the entire domain name that the query was searching for.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Send a lookup query to the DNS Server listening on port 3053</span>
+</span></span><span style="display:flex;"><span>dig +noedns +norecurse @127.0.0.1 -p <span style="color:#ae81ff">3053</span> www.google.com  <span style="color:#75715e"># lookup www.google.com&#39;s IP</span>
+</span></span></code></pre></div><figure>
+    <a href="/images/projects/dns-client/dns-query.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-query.png"
+        alt="DNS Query"
+        width="650"
+        height="450"
+        >
+    </a>
+  <figcaption>Query for <i>www.google.com</i> received from the client</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-lookup-1.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-lookup-1.png"
+        alt="DNS Lookup 1"
+        width="700"
+        height="450"
+        >
+    </a>
+  <figcaption>Performing the first lookup</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-resp-1.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-resp-1.png"
+        alt="DNS Response 1"
+        width="700"
+        height="550"
+        >
+    </a>
+  <figcaption>Response received from the NS: 198.41.0.4</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-resp-2.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-resp-2.png"
+        alt="DNS Response 2"
+        width="700"
+        height="550"
+        >
+    </a>
+  <figcaption>A random IP of an <i>A type</i> record is selected to perform the next lookup</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-lookup-2.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-lookup-2.png"
+        alt="DNS Lookup 2"
+        width="700"
+        height="450"
+        >
+    </a>
+  <figcaption>Performing the second lookup</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-resp-3.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-resp-3.png"
+        alt="DNS Response 3"
+        width="700"
+        height="550"
+        >
+    </a>
+  <figcaption>Response of the second lookup</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-lookup-3.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-lookup-3.png"
+        alt="DNS Lookup 3"
+        width="700"
+        height="450"
+        >
+    </a>
+  <figcaption>Performing the final lookup</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-resp-4.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-resp-4.png"
+        alt="DNS Response 4"
+        width="700"
+        height="650"
+        >
+    </a>
+  <figcaption>IP of <i>www.google.com</i> found and returned to the client!</figcaption>
+</figure>
+<figure>
+    <a href="/images/projects/dns-client/dns-dig-resp.png" target="_blank">
+        <img 
+        src="/images/projects/dns-client/dns-dig-resp.png"
+        alt="DNS Client Resp"
+        width="800"
+        height="450"
+        >
+    </a>
+  <figcaption>Client receives the response of the final lookup</figcaption>
+</figure>
+<h1 id="what-i-learned">What I learned</h1>
+<p>I gained a lot of knowledge w.r.t. Computer Networks and DNS while working on this project;
+parsing the DNS packets helped me refresh my bit manipulation skills and I worked with sockets once again while
+implementing the UDP client.
+<br />
+<br />
+As I worked on this project independently, I navigated through all the challenges on my own and that helped me boost my
+confidence in my skills.</p>
+
+                </p>
+            </div><span class="navFull">
+    
+
+
+
+
+    
+    
+
+<span>
+    <a href="/">Home</a>
+    <span>&#8192;|&#8192;</span>
+    <a href="./..">/projects/</a>
+</span>
+
+
+
+    
+
+    <span id="navbar-links">
+        <span class="tooltip"><span class="tooltiptext">Github</span><a href="https://github.com/himanshu808" target="_blank"><i class="fa fa-github navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Linkedin</span><a href="https://www.linkedin.com/in/himanshushah10/" target="_blank"><i class="fa fa-linkedin-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Email</span><a href="mailto:himansss@uci.edu, himanshushah.alt@gmail.com" target="_blank"><i class="fa fa-envelope-square navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Resume</span><a href="/resume"><i class="fa fa-file navbar-fa"></i></a></span>
+        <span class="tooltip"><span class="tooltiptext">Website</span><a href="https://himanshu808.github.io/" target="_blank"><i class="fa fa-link navbar-fa"></i></a></span>
+    </span>
+
+    <span class="navCredits">
+        Hugo theme by
+        <a href="https://github.com/Yukuro/hugo-theme-shell" target="_blank" rel="noopener">Yukuro</a>
+    </span>
+</span>
+
+        </div>
+    </body>
+</html>

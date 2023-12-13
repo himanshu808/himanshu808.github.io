@@ -17,12 +17,12 @@
     </item>
     
     <item>
-      <title>DNS Server</title>
-      <link>https://himanshu808.github.io/projects/dns-server/</link>
+      <title>DNS Client</title>
+      <link>https://himanshu808.github.io/projects/dns-client/</link>
       <pubDate>Sun, 26 Feb 2023 14:58:11 -0800</pubDate>
       
-      <guid>https://himanshu808.github.io/projects/dns-server/</guid>
-      <description>Implementing a basic DNS server</description>
+      <guid>https://himanshu808.github.io/projects/dns-client/</guid>
+      <description>Implementing a basic DNS client</description>
     </item>
     
   </channel>
